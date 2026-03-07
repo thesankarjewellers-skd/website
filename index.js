@@ -47,30 +47,34 @@ style.textContent = `
 
                 .index-offer-slider-viewport {
                     width: 100%;
-                    max-width: 1200px;
-                    margin: 40px auto;
                     overflow: hidden;
                     position: relative;
-                    background: var(--bg);
+                    /* Remove any side margins that might shrink the content area */
+                    margin: 40px 0;
                 }
 
                 .index-offer-slider-track {
                     display: flex;
-                    will-change: transform;
+                    transition: transform 0.5s ease-in-out;
                 }
 
                 .index-offer-card {
-                    flex: 0 0 100%; /* Default Mobile */
-                    height: 480px;
+                    flex: 0 0 100%;
+                    height: 400px; /* Reduced base height for mobile */
                     padding: 0 10px;
                     box-sizing: border-box;
                     display: flex;
                     flex-direction: column;
                 }
 
+                .index-offer-img-zone img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; /* CHANGED: maintains aspect ratio */
+                }
+
                 /* 60% Image / 15% Heading / 25% Subtitle */
                 .index-offer-img-zone { height: 60%; width: 100%; overflow: hidden; border-radius: 8px 8px 0 0; }
-                .index-offer-img-zone img { width: 100%; height: 100%; object-fit: fill; }
 
                 .index-offer-head-zone {
                     height: 15%; background: var(--dark_offer); color: var(--gold_offer);
@@ -86,6 +90,7 @@ style.textContent = `
                     color: #444; font-size: 1rem; line-height: 1.4;
                 }
 
+                
                 /* Responsive: 3 slides on large screens */
                 @media (min-width: 1024px) {
                     .index-offer-card { flex: 0 0 33.333%; }
@@ -96,6 +101,7 @@ style.textContent = `
                     .index-offer-card { height: 420px; }
                     .index-offer-head-zone { font-size: 0.8rem; }
                 }
+                // Inside your style.textContent string in index.js:
             `;
 document.head.appendChild(style);
 
@@ -136,21 +142,19 @@ async function createSlider() {
     function slide() {
         currentIndex++;
 
-        // Determine width based on screen size (100% for 360px mobile, 33.33% for desktop)
-        const isMobile = window.innerWidth < 1024;
-        const slideWidth = isMobile ? 100 : 33.333;
+        // Ensure this matches your CSS Breakpoints exactly
+        const isDesktop = window.innerWidth >= 1024;
+        const slideWidth = isDesktop ? 33.3333 : 100;
 
         track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
         track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
 
-        // When we reach the clone of the first slide
         if (currentIndex === totalOriginals) {
             setTimeout(() => {
-                // Instantly teleport back to the start
                 track.style.transition = "none";
                 currentIndex = 0;
                 track.style.transform = `translateX(0)`;
-            }, 800); // Wait exactly for the animation duration (0.8s)
+            }, 500); // Match this to your transition duration
         }
     }
 
