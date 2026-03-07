@@ -245,13 +245,13 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
 });
 
 //fetching content of spreadsheet
-const API_KEY = "AIzaSyDKK039v7qBCELSM0KqMYZYJAGDm4wt_V0";
+const a_k = "AIzaSyDKK039v7qBCELSM0KqMYZYJAGDm4wt_V0";
 const spreadsheetId = "1RM_mBTHeLSRfF7E3BUP3Pd4VqljGKJqTcTwKrhtkxwc";
 const CLIENT_ID = "789103313019-d5uf5qfsk7hrvo69ef7hgjaq1k0p63pr.apps.googleusercontent.com";
 let userID = "";
 let passwd = "";
 async function fetchSheetDetails(spreadsheetId, range) {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${API_KEY}`;
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${a_k}`;
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Failed to fetch products');

@@ -1,10 +1,10 @@
 ﻿//fetching content of spreadsheet
-const API_KEY = "AIzaSyC_cQUuttIlS_10rsJxnuO7526Gsv4ufRs";
+const a_k = "AIzaSyC_cQUuttIlS_10rsJxnuO7526Gsv4ufRs";
 const spreadsheetId = "1SYq-y_sbLArhOG-Z9g2LdTEutF8omPjTZAh3B3qAVsc";
 let userID = "";
 let passwd = "";
 async function fetchSheetDetails(spreadsheetId, range) {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${API_KEY}`;
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${a_k}`;
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Failed to fetch products');

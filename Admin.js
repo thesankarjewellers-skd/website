@@ -144,8 +144,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function fetchSheetDetails(spreadsheetId, range) {
-    const API_KEY = "AIzaSyC_cQUuttIlS_10rsJxnuO7526Gsv4ufRs";
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${API_KEY}`;
+    const a_k = "AIzaSyC_cQUuttIlS_10rsJxnuO7526Gsv4ufRs";
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${a_k}`;
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Failed to fetch products');
