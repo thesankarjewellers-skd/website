@@ -1,0 +1,241 @@
+﻿.custom-order-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .custom-order-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.order-form {
+    background: #fdfaf5;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e5d5b7;
+    height: auto;
+    align-self: start; /* Keeps it at the top if the table gets long */
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+    .form-row label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #4a3728;
+    }
+
+    .form-row input, .form-row select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    transition: background 0.3s;
+}
+
+    .whatsapp-btn:hover {
+        background-color: #128C7E;
+    }
+#summary-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex: 1;
+}
+
+    #summary-table thead {
+        background-color: #f8f1e5;
+        color: #4a3728;
+    }
+
+    #summary-table th {
+        padding: 15px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+
+    #summary-table td {
+        padding: 12px;
+        border-top: 1px solid #eee;
+    }
+
+    #summary-table tfoot {
+        background-color: #fcfcfc;
+        font-weight: bold;
+    }
+
+/* Container to limit table height */
+.table-scroll-container {
+    max-height: 369px; /* Adjust this value to your preferred height */
+    overflow-y: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 8px 8px 0 0;
+    background: #fff;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+    /* Custom Scrollbar for a premium look */
+    .table-scroll-container::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .table-scroll-container::-webkit-scrollbar-thumb {
+        background: var(--color-gold-dark);
+        border-radius: 10px;
+    }
+
+/* Fix table header so it stays at the top while scrolling */
+#summary-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fdfaf5; /* Matches the header color */
+    box-shadow: inset 0 -2px 0 var(--color-border);
+}
+
+/* Separate bar for the total so it doesn't scroll away */
+.total-summary-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 18px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 0 0 8px 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#total-budget {
+    color: var(--color-gold-light);
+}
+
+
+/* Styling for the empty state message */
+.empty-message {
+    text-align: center !important;
+    padding: 40px !important;
+    color: #999;
+    font-style: italic;
+    font-family: var(--font-body);
+    background: #fafafa;
+}
+
+
+
+
+#custom-orders {
+    margin-bottom: 10px;
+}
+/* --- Responsive Build Your Collection --- */
+
+/* 1. Stack the Form and Summary on Tablets/Phones */
+@media (max-width: 992px) {
+    .custom-order-container {
+        grid-template-columns: 1fr; /* Stack vertically */
+        gap: 40px;
+    }
+
+    .order-form {
+        max-width: 100%; /* Take full width */
+    }
+
+    .table-scroll-container {
+        max-height: 500px; /* Allow slightly more height on mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Hide the traditional table header */
+    #summary-table thead {
+        display: none;
+    }
+
+    /* Force table rows to behave like cards */
+    #summary-table tr {
+        display: block;
+        border: 1px solid var(--color-border);
+        margin-bottom: 15px;
+        border-radius: 8px;
+        padding: 10px;
+        position: relative;
+        background: #fff;
+    }
+
+    /* Make the WhatsApp button full width for thumbs */
+    .whatsapp-btn {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #summary-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        padding: 6px 0;
+        text-align: right;
+        /* Add padding-right so text doesn't hit the absolute-positioned X button */
+        padding-right: 35px;
+    }
+
+        #summary-table td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            color: var(--color-text-light);
+            text-align: left;
+            flex: 1;
+            font-size: 0.85rem;
+        }
+
+    /* Target the cell containing the X button */
+    .action-cell {
+        padding-right: 0 !important; /* Reset padding for the action cell itself */
+    }
+
+    .remove-item-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+    }
+
+    /* Hide the 'Action' label on mobile to keep it clean */
+    .action-cell::before {
+        display: none;
+    }
+}

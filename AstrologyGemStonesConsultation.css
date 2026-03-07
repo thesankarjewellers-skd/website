@@ -1,0 +1,33 @@
+﻿.astrology-hero-slideshow {
+    position: relative; /* Changed from absolute to ensure it takes up space */
+    width: 100%;
+    height: 100vh; /* Give it a specific height */
+}
+
+.astrology-hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 1; /* Changed from 0 to 1 */
+    background-image: url('./images/Astrology_hero.png');
+    background-repeat: no-repeat;
+    /* Use the animation already defined in your style.css */
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+#custom-orders {
+    padding: 10px;
+}
+
+/* Move dots/numbers closer to text and align to the left */
+.format_text {
+    text-indent: 0; /* Removing the 40px indent so the list starts at the margin */
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+    /* Optional: Add a tiny bit of space between the dot and text if they are too cramped */
+    .format_text li {
+        margin-bottom: 8px; /* Adds space between list items for readability */
+    }

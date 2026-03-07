@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankar Jewellers | Premium Jewellry store in Kolkata</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Offers.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleSideMenu()">☰</button>
+            <a href="#" class="logo">Sankar Jewellers</a>
+        </nav>
+    </header>
+    <div id="sideMenu" class="side-menu">
+        <div class="side-menu-header">
+            <span class="logo">Sankar Jewellers</span>
+            <button class="close-menu" onclick="toggleSideMenu()">✕</button>
+        </div>
+
+        <div class="side-menu-content">
+            <a href="./index.html#home" onclick="toggleSideMenu()">Home</a>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">Women <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Earrings" onclick="toggleSideMenu()">Earrings</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">Pendant</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Necklace" onclick="toggleSideMenu()">Necklace</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Bangles" onclick="toggleSideMenu()">Bangles</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Ring" onclick="toggleSideMenu()">Ring</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">Bracelet</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Chain" onclick="toggleSideMenu()">Chain</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Mangalsutra" onclick="toggleSideMenu()">Mangalsutra</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Nosepin" onclick="toggleSideMenu()">Nosepin</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Mang Tikka" onclick="toggleSideMenu()">Mang Tikka</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Anklets" onclick="toggleSideMenu()">Anklets</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=OtherProducts" onclick="toggleSideMenu()">Other Products</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Silver&product=All" onclick="toggleSideMenu()">Silver Collection</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">Men <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Chain" onclick="toggleSideMenu()">Chain</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Bangles" onclick="toggleSideMenu()">Bangles</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">Pendant</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Tie Pin" onclick="toggleSideMenu()">Tie Pin</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Ring" onclick="toggleSideMenu()">Ring</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Brooch" onclick="toggleSideMenu()">Brooch</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Button" onclick="toggleSideMenu()">Button</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Cufflink" onclick="toggleSideMenu()">Cufflink</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">Bracelet</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=OtherProducts" onclick="toggleSideMenu()">Other Products</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Silver&product=All" onclick="toggleSideMenu()">Silver Collection</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">Kids <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Earrings" onclick="toggleSideMenu()">Earrings</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">Pendant</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">Bracelet</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Ring" onclick="toggleSideMenu()">Ring</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Baby Bracelet" onclick="toggleSideMenu()">Nazariya (Baby Bracelet)</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=OtherProducts" onclick="toggleSideMenu()">Other Products</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Silver&product=All" onclick="toggleSideMenu()">Silver Collection</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">Silver <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Anklets" onclick="toggleSideMenu()">Nupur (Anklets)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Thick Anklets" onclick="toggleSideMenu()">Mal (Thick Anklets)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Toe Rings" onclick="toggleSideMenu()">Angat (Toe Rings)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Hair Pins" onclick="toggleSideMenu()">Khopar Kata (Hair Pins)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Sindoor Box" onclick="toggleSideMenu()">Sindoor Kouto (Sindoor Box)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Lamp" onclick="toggleSideMenu()">Pancha Pradip (Lamp)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Spoon" onclick="toggleSideMenu()">Kosh-Kushi (Spoon)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Plate" onclick="toggleSideMenu()">Thali (Plate)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Bowl" onclick="toggleSideMenu()">Bati (Bowl)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=SmallTumbler" onclick="toggleSideMenu()">Goti (Small Tumbler)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=RattleToy" onclick="toggleSideMenu()">Jhunjhuni (Rattle Toy)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Baby Bracelet" onclick="toggleSideMenu()">Nazariya (Baby Bracelet)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=OtherProducts" onclick="toggleSideMenu()">Other Products</a>
+                </div>
+            </div>
+            <a href="./CustomizeYourCollection.html" onclick="toggleSideMenu()">Custom Collection</a>
+            <a href="./Offers.html" onclick="toggleSideMenu()">Offers</a>
+            <a href="./index.html#about_us" onclick="toggleSideMenu()">About Us</a>
+            <a href="./index.html#contact" onclick="toggleSideMenu()">Contact</a>
+        </div>
+    </div>
+
+    <div id="menuOverlay" class="menu-overlay" onclick="toggleSideMenu()"></div>
+
+    <!-- Gemstones Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Swarna Yojna</h2>
+                <p id="section_title">Invest for 11, get 12! The smartest way to buy your next gold piece.</p>
+            </div>
+
+            <div class="responsive-container">
+
+                <div class="content-box">
+                    <img src="./Offer_templates/Eleven_plus_one_scheme.png" alt="Sample Product Image">
+                </div>
+
+                <div class="content-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="table_top_left"></th>
+                                <th>Month</th>
+                                <th>Monthly Investment</th>
+                                <th class="table_top_right">Total Contribution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">1</td>
+                                <td>5000</td>
+                                <td>5,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">2</td>
+                                <td>5000</td>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">3</td>
+                                <td>5000</td>
+                                <td>15,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">4</td>
+                                <td>5000</td>
+                                <td>20,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">5</td>
+                                <td>5000</td>
+                                <td>25,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">6</td>
+                                <td>5000</td>
+                                <td>30,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">7</td>
+                                <td>5000</td>
+                                <td>35,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">8</td>
+                                <td>5000</td>
+                                <td>40,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">9</td>
+                                <td>5000</td>
+                                <td>45,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">10</td>
+                                <td>5000</td>
+                                <td>50,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">You pay</td>
+                                <td class="month_count">11</td>
+                                <td>5000</td>
+                                <td>55,000</td>
+                            </tr>
+                            <tr>
+                                <td class="payment"><s class="reduced_font_size">You pay</s>&nbsp;<i class="our_contribution">WE PAY</i></td>
+                                <td class="our_contribution month_count"><i>12</i></td>
+                                <td><i class="our_contribution">5000</i></td>
+                                <td>55,000 + <i class="our_contribution">5000</i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="our_contribution">
+                        Let's say you invest Rs. 5000/- per month. After 12th month, you are eligible to get a Jewellery of your choice worth Rs. 60,000/-
+                        Even though you paid only Rs. 55,000/- (T & C applied)<sup class="t_c_applied">*</sup>
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>The Art of Accumulation: A Legacy Unfolds</h3>
+            <br />
+            <b>Curate Your Collection with Intent</b><br />
+            True elegance is rarely a matter of impulse; it is the result of a vision. We invite you to experience our <b>Signature 11+1 Bespoke Acquisition Plan</b>—a sophisticated approach to building your personal jewellery heritage.
+            <br /><br />
+            <b>The Privilege of Partnership</b><br />
+            As a participant in this exclusive circle, you commit to a monthly investment (at least Rs. 500/- per month) of your choosing for eleven months. Upon the twelfth month, as a gesture of our appreciation for your continued patronage, <b>the House will contribute the final installment on your behalf.</b>
+            <br /><br />
+            <b>A Celebration of Continuity</b><br />
+            Whether you are anticipating a significant anniversary, a milestone birthday, or simply the expansion of your private vault, this program ensures that at the end of your annual journey, a piece of extraordinary craftsmanship is waiting for you—valued at the full twelve-month maturity.
+            <br /><br />
+            <b>The Benefits of the Circle:</b>
+            <br />
+            <ul class="format_text">
+                <li>
+                    <b>Complimentary Final Installment:</b> A 12th-month contribution provided by the House.
+                </li>
+                <li>
+                    <b>Price Protection:</b> Secure the value of your future acquisition today.
+                </li>
+                <li>
+                    <b>Private Preview Access:</b> Priority viewing of new high-jewellery collections as your plan nears maturity.
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Swarna Sanchay</h2>
+                <p id="section_title">Invest Monthly. Book Gold. Get special reward.</p>
+            </div>
+            <div class="responsive-container">
+                <div class="content-box">
+                    <img src="./Offer_templates/Swarna_sanchay_scheme.png" alt="Sample Product Image">
+                </div>
+
+                <div class="content-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="table_top_left month_count">Month</th>
+                                <th>Monthly <br />Investment</th>
+                                <th>Total <br />Invested</th>
+                                <th>Present Gold <br />Prices</th>
+                                <th class="table_top_right">Profit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="month_count">1</td>
+                                <td>12000</td>
+                                <td>12000</td>
+                                <td>12960</td>
+                                <td>960</td>
+                            </tr>
+                            <tr>
+                                <td class="month_count">3</td>
+                                <td>12000</td>
+                                <td>36000</td>
+                                <td>38880</td>
+                                <td>2880</td>
+                            </tr>
+                            <tr>
+                                <td class="month_count">6</td>
+                                <td>12000</td>
+                                <td>12000</td>
+                                <td>12960</td>
+                                <td>5760</td>
+                            </tr>
+                            <tr>
+                                <td class="month_count">9</td>
+                                <td>12000</td>
+                                <td>12000</td>
+                                <td>12960</td>
+                                <td>8640</td>
+                            </tr>
+                            <tr>
+                                <td class="month_count">12</td>
+                                <td>12000</td>
+                                <td>144000</td>
+                                <td>155520</td>
+                                <td>11520</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <p class="our_contribution">
+                        (T & C applied)<sup class="t_c_applied">*</sup>
+                    </p>
+                    <h3>The example shown above depicts: How You Benefit from Swarna Sanchay</h3>
+                    Assume:
+                    <br />
+                    Monthly investment: Rs. 12,000
+                    <br />
+                    If after a month, the gold prices increased by 8% then,
+                    Value of investment after a month will be: Rs. 12,000 + Rs. 960 = Rs. 12,960
+                    <br />
+                    In 3 months Total Investment will be: Rs. 36,000
+                    <br />If gold prices increased by 8% in 3 months then,<br />
+                    Value after 3 months will be: Rs. 36,000 + Rs. 2,880= Rs. 38,880
+                    <br />If gold prices increased by 8% in 6 months then,<br />
+                    Value after 6 months will be: Rs. 72,000 + Rs. 5,760= Rs. 77,760
+                    <br />If gold prices increased by 8% in 9 months then,<br />
+                    Value after 9 months will be: Rs. 1,08,000 + Rs. 8,640: Rs. 1,16,640
+                    <br />If gold prices increased by 8% in 12 months then,<br />
+                    Value after 12 months will be: Rs. 1,44,000 + Rs. 11,520: Rs. 1,55,520
+                    <br />
+                    Hence, Duration: 12 months
+                    <br />
+                    Total investment: Rs. 1,44,000
+                    <br />
+                    Present value: Rs. 1,55,520
+                    <br />
+                    Profit: Rs 11,520
+
+                    (Example based on 8% gold price appreciation. Actual results depend on market rates.)
+                </div>
+
+            </div>
+            <h3>Swarna Sanchay – Your Smart Way to Build Gold Wealth</h3>
+            <br />
+            Gold has always symbolized prosperity, security, and timeless value. With <b>Swarna Sanchay</b>, you can now transform your monthly savings into guaranteed gold ownership—while enjoying exclusive benefits and special privileges.
+            <br /><br />
+            This unique gold savings plan allows you to invest systematically every month and secure your gold at the current market rate, protecting you from future price increases. As a valued Swarna Sanchay member, you will also receive a <b>Special Gold Booking Card,</b> unlocking priority benefits and exclusive offers.
+            <br /><br />
+            <hr />
+            <br />
+            <h3>How Swarna Sanchay Works</h3>
+
+            With <b>Swarna Sanchay</b>, you simply:
+            <ul class="format_text">
+                <li>
+                    Invest a <b>minimum of Rs. 12,000 per month</b>
+                </li>
+                <li>
+                    Continue investing for your chosen duration
+                </li>
+                <li>
+                    <b>Book gold at today’s rate</b> at the time of enrollment or during the scheme
+                </li>
+                <li>
+                    Receive a <b>Special Gold Booking Card</b> as a privilege benefit
+                </li>
+                <li>
+                    Redeem your accumulated value to purchase gold jewellery or coins
+                </li>
+            </ul>
+            This ensures disciplined savings while safeguarding you against rising gold prices.
+            <br /><br />
+            <hr />
+            <br />
+            <h3>Exclusive Advantages of Swarna Sanchay</h3>
+            <ol class="format_text">
+                <li>
+                    <b>Protection Against Gold Price Increase</b><br />
+                    Book gold at today's rate and avoid paying higher prices in the future.
+                </li>
+                <li>
+                    <b>Disciplined Monthly Savings</b><br />
+                    Convert small monthly investments into a valuable gold asset.
+                </li>
+                <li>
+                    <b>Special Gold Booking Card</b><br />
+                    Enjoy priority booking, exclusive service, and special privileges.
+                </li>
+                <li>
+                    <b>Flexible Redemption</b><br />
+                    Redeem your accumulated value against jewellery, coins, or gold bars.
+                </li>
+                <li>
+                    <b>Wealth Creation Through Appreciation</b><br />
+                    Benefit from natural gold price appreciation over time.
+                </li>
+            </ol>
+            <br />
+            <hr />
+            <br />
+            
+        </div>
+    </section>
+    <section id="scheme-calculator">
+        <div class="section-title">
+            <h2>Scheme Calculator</h2>
+            <p>Evaluate our schemes and your profits.</p>
+        </div>
+
+        <div class="content-box">
+            <h3 class="scheme-card-title">Swarna Sanchay</h3>
+            <div class="scheme-input-wrapper">
+                <label class="scheme-label">Monthly Investment (Min ₹12,000):</label>
+                <input type="number" id="sanchayAmount" class="scheme-field" value="12000" min="12000" oninput="updateCalculators()">
+            </div>
+
+            <div class="scheme-scroll-area">
+                <table class="scheme-table">
+                    <thead>
+                        <tr>
+                            <th class="scheme-th" rowspan="2">Month</th>
+                            <th class="scheme-th" rowspan="2">Total Invested</th>
+                            <th class="scheme-th" colspan="2">8% Appreciation</th>
+                            <th class="scheme-th" colspan="2">9% Appreciation</th>
+                            <th class="scheme-th" colspan="2">10% Appreciation</th>
+                        </tr>
+                        <tr>
+                            <th class="scheme-th">Value</th>
+                            <th class="scheme-th">Profit</th>
+                            <th class="scheme-th">Value</th>
+                            <th class="scheme-th">Profit</th>
+                            <th class="scheme-th">Value</th>
+                            <th class="scheme-th">Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sanchayBody"></tbody>
+                </table>
+            </div>
+            <p class="scheme-note">* Swipe horizontally to see more price scenarios.</p>
+        </div>
+
+        <div class="content-box">
+            <h3 class="scheme-card-title">Swarna Yojna</h3>
+            <div class="scheme-input-wrapper">
+                <label class="scheme-label">Monthly Investment (Min ₹500):</label>
+                <input type="number" id="yojnaAmount" class="scheme-field" value="5000" min="500" oninput="updateCalculators()">
+            </div>
+
+            <div class="scheme-scroll-area">
+                <table class="scheme-table">
+                    <thead>
+                        <tr>
+                            <th class="scheme-th table_top_left">Month</th>
+                            <th class="scheme-th">You Pay</th>
+                            <th class="scheme-th">We Pay</th>
+                            <th class="scheme-th table_top_right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="yojnaBody"></tbody>
+                </table>
+            </div>
+            <p class="scheme-result-text" id="yojnaResult">Total Maturity Value: ₹60,000</p>
+        </div>
+
+        <script type="text/javascript">
+
+            function calculateSanchay() {
+                const amount = parseFloat(document.getElementById('sanchayAmount').value) || 0;
+                const tbody = document.getElementById('sanchayBody');
+                tbody.innerHTML = '';
+
+                for (let i = 1; i <= 12; i++) {
+                    const invested = amount * i;
+
+                    // Calculation Helper
+                    const getStats = (rate) => {
+                        const annualRate = rate / 100;
+                        const value = invested * (1 + (annualRate * i / 12));
+                        const profit = value - invested;
+                        return { val: Math.round(value), prof: Math.round(profit) };
+                    };
+
+                    const scenario8 = getStats(8);
+                    const scenario9 = getStats(9);
+                    const scenario10 = getStats(10);
+
+                    tbody.innerHTML += `<tr>
+            <td class="scheme-td">${i}</td>
+            <td class="scheme-td">₹${invested.toLocaleString()}</td>
+            <td class="scheme-td">₹${scenario8.val.toLocaleString()}</td>
+            <td class="scheme-td" style="color:green">+₹${scenario8.prof.toLocaleString()}</td>
+            <td class="scheme-td">₹${scenario9.val.toLocaleString()}</td>
+            <td class="scheme-td" style="color:green">+₹${scenario9.prof.toLocaleString()}</td>
+            <td class="scheme-td">₹${scenario10.val.toLocaleString()}</td>
+            <td class="scheme-td" style="color:green">+₹${scenario10.prof.toLocaleString()}</td>
+        </tr>`;
+                }
+            }
+
+            function updateCalculators() {
+                calculateSanchay();
+                calculateYojna();
+            }
+
+            function calculateYojna() {
+                const amount = parseFloat(document.getElementById('yojnaAmount').value) || 0;
+                const tbody = document.getElementById('yojnaBody');
+                tbody.innerHTML = '';
+
+                for (let i = 1; i <= 12; i++) {
+                    const userPays = i <= 11 ? amount : 0;
+                    const storePays = i === 12 ? amount : 0;
+                    tbody.innerHTML += `<tr>
+            <td class="scheme-td">${i}</td>
+            <td class="scheme-td">₹${userPays}</td>
+            <td class="scheme-td" style="color:brown; font-weight:bold;">${storePays ? '₹' + storePays : '-'}</td>
+            <td class="scheme-td">₹${amount * i}</td>
+        </tr>`;
+                }
+                document.getElementById('yojnaResult').innerText = `Total Maturity Value: ₹${amount * 12}`;
+            }
+
+            document.addEventListener('DOMContentLoaded', updateCalculators);
+        </script>
+    </section>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sankar Jewellers</h3>
+                <p>Crafting timeless elegance for generations. Your trusted jeweller in Kolkata for premium gold, silver, and platinum jewellry.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p>26, Rakhal Das Addy Road<br>Chetla, Kolkata-700027<br>West Bengal, India</p>
+                <p>47, Rakhal Das Addy Road<br>Chetla, Kolkata-700027<br>West Bengal, India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="tel:+91XXXXXXXXXX">Landline: +91 33 XXXX XXXX</a><br>
+                <a href="tel:+91XXXXXXXXXX">Phone: +91 98300 XXXXX</a><br>
+                <a href="tel:+91XXXXXXXXXX">Alternate: +91 98300 XXXXX</a><br>
+                <a href="mailto:abc@gmail.com">Email: info_abc@gmail.com</a><br>
+                Hours: Mon-Sat, 10 AM - 9 PM
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html#collection">Our Collection</a></li>
+                    <li><a href="./index.html#about_us">About Us</a></li>
+                    <li><a href="./index.html#checkMetalPrices">Gold/Silver Rate Today</a></li>
+                    <li><a href="./CustomizeYourCollection.html">Custom Collection</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer_disclaimer_container">
+                <div class="footer_text_inside">
+                    <h3>T&C applied in all products</h3>
+                    <ul>
+                        <li>Metal value, Gem-stone value, and Jewellery products are subjected to market risk.</li>
+                        <li>Terms and conditions applied.</li>
+                    </ul>
+                </div>
+            </div>
+            <p>&copy; 2026 Sankar Jewellers. All rights reserved. | Designed with excellence</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>

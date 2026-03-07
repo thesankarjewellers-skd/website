@@ -1,0 +1,57 @@
+﻿/* Admin.css - Responsive Fixes */
+.outer_container {
+    width: 100%;
+    min-height: calc(100vh - 80px); /* Adjust for header height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f172a;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Post-Login Link Styling */
+.admin-links-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.admin-link {
+    display: block;
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 15px 0;
+    padding: 12px;
+    border: 1px border solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+    .admin-link:hover {
+        background: rgba(56, 189, 248, 0.1);
+    }
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+.shake {
+    animation: shake 0.4s ease-in-out;
+}

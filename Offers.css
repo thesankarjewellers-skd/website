@@ -1,0 +1,153 @@
+﻿/* Move dots/numbers closer to text and align to the left */
+.format_text {
+    text-indent: 0; /* Removing the 40px indent so the list starts at the margin */
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+    /* Optional: Add a tiny bit of space between the dot and text if they are too cramped */
+    .format_text li {
+        margin-bottom: 8px; /* Adds space between list items for readability */
+    }
+
+/* Layout Containers */
+.responsive-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px 0;
+    align-items: stretch; /* Ensures both boxes are equal height */
+}
+
+/* Individual Divs */
+.content-box {
+    flex: 1 1 calc(50% - 25px); /* Half screen width on desktop */
+    min-width: 320px; /* Stacks on mobile when space is low */
+    display: flex;
+    flex-direction: column;
+    background: #fff; /* Added for better visibility of padding */
+    padding: 20px; /* Padding inside the card itself */
+    border-radius: 8px;
+}
+
+    /* Image styling */
+    .content-box img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+    }
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 1.5px;
+    text-align: left;
+}
+
+th {
+    background-color: lightblue;
+}
+.table_top_left {
+    border-top-left-radius: 10px;
+    border: 0px solid #ddd;
+}
+.table_top_right {
+    border-top-right-radius: 10px;
+    border: 0px solid #ddd;
+}
+
+.our_contribution {
+    color: brown;
+    font-weight: bolder;
+}
+
+.payment {
+    padding-left: 10px;
+}
+
+.month_count {
+    text-align: center;
+}
+.reduced_font_size {
+    font-weight: lighter;
+}
+.t_c_applied{
+    color: red;
+}
+/* Responsive Layout for Large Screens (Desktop) */
+@media (min-width: 768px) {
+    .responsive-container {
+        flex-direction: row; /* Side by side on large screens */
+        align-items: flex-start;
+    }
+
+    .content-box {
+        flex: 1; /* Each div takes up 50% of the width */
+    }
+}
+
+
+.scheme-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    min-width: 800px; /* Forces the table to be wide enough to scroll */
+}
+
+.scheme-th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.scheme-td {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.scheme-th, .scheme-td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Input Styling */
+.scheme-input-wrapper {
+    margin: 10px 0;
+}
+
+.scheme-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+}
+
+.scheme-scroll-area {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scroll */
+    white-space: nowrap; /* Prevents text from breaking into new lines */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.scheme-card-title {
+    color: #1a1410;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 5px;
+}

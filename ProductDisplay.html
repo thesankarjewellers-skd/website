@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankar Jewellers | Premium Jewellry store in Kolkata</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="ProductDisplay.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleSideMenu()">☰</button>
+            <a href="#" class="logo">Sankar Jewellers</a>
+        </nav>
+    </header>
+    <div id="sideMenu" class="side-menu">
+        <div class="side-menu-header">
+            <span class="logo">Sankar Jewellers</span>
+            <button class="close-menu" onclick="toggleSideMenu()">✕</button>
+        </div>
+
+        <div class="side-menu-content">
+            <a href="./index.html#home" onclick="toggleSideMenu()">Home</a>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">Women <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Earrings" onclick="toggleSideMenu()">Earrings</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">Pendant</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Necklace" onclick="toggleSideMenu()">Necklace</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Bangles" onclick="toggleSideMenu()">Bangles</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Ring" onclick="toggleSideMenu()">Ring</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">Bracelet</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Chain" onclick="toggleSideMenu()">Chain</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Mangalsutra" onclick="toggleSideMenu()">Mangalsutra</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Nosepin" onclick="toggleSideMenu()">Nosepin</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Mang Tikka" onclick="toggleSideMenu()">Mang Tikka</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Anklets" onclick="toggleSideMenu()">Anklets</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=OtherProducts" onclick="toggleSideMenu()">Other Products</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Silver&product=All" onclick="toggleSideMenu()">Silver Collection</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">Men <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Chain" onclick="toggleSideMenu()">Chain</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Bangles" onclick="toggleSideMenu()">Bangles</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">Pendant</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Tie Pin" onclick="toggleSideMenu()">Tie Pin</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Ring" onclick="toggleSideMenu()">Ring</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Brooch" onclick="toggleSideMenu()">Brooch</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Button" onclick="toggleSideMenu()">Button</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Cufflink" onclick="toggleSideMenu()">Cufflink</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">Bracelet</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=OtherProducts" onclick="toggleSideMenu()">Other Products</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Silver&product=All" onclick="toggleSideMenu()">Silver Collection</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">Kids <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Earrings" onclick="toggleSideMenu()">Earrings</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">Pendant</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">Bracelet</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Ring" onclick="toggleSideMenu()">Ring</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Baby Bracelet" onclick="toggleSideMenu()">Nazariya (Baby Bracelet)</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=OtherProducts" onclick="toggleSideMenu()">Other Products</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Silver&product=All" onclick="toggleSideMenu()">Silver Collection</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">Silver <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Anklets" onclick="toggleSideMenu()">Nupur (Anklets)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Thick Anklets" onclick="toggleSideMenu()">Mal (Thick Anklets)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Toe Rings" onclick="toggleSideMenu()">Angat (Toe Rings)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Hair Pins" onclick="toggleSideMenu()">Khopar Kata (Hair Pins)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Sindoor Box" onclick="toggleSideMenu()">Sindoor Kouto (Sindoor Box)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Lamp" onclick="toggleSideMenu()">Pancha Pradip (Lamp)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Spoon" onclick="toggleSideMenu()">Kosh-Kushi (Spoon)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Plate" onclick="toggleSideMenu()">Thali (Plate)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Bowl" onclick="toggleSideMenu()">Bati (Bowl)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=SmallTumbler" onclick="toggleSideMenu()">Goti (Small Tumbler)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=RattleToy" onclick="toggleSideMenu()">Jhunjhuni (Rattle Toy)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Baby Bracelet" onclick="toggleSideMenu()">Nazariya (Baby Bracelet)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=OtherProducts" onclick="toggleSideMenu()">Other Products</a>
+                </div>
+            </div>
+            <a href="./CustomizeYourCollection.html" onclick="toggleSideMenu()">Custom Collection</a>
+            <a href="./Offers.html" onclick="toggleSideMenu()">Offers</a>
+            <a href="./index.html#about_us" onclick="toggleSideMenu()">About Us</a>
+            <a href="./index.html#contact" onclick="toggleSideMenu()">Contact</a>
+        </div>
+    </div>
+
+    <div id="menuOverlay" class="menu-overlay" onclick="toggleSideMenu()"></div>
+
+    <div class="product-display-container">
+        <div class="product-display-product-wrapper">
+            <div class="product-display-product-images" id="imageSection">
+                <div class="skeleton" style="width: 100%; height: 400px; border-radius: 10px;"></div>
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <div class="skeleton" style="width: 70px; height: 70px;"></div>
+                    <div class="skeleton" style="width: 70px; height: 70px;"></div>
+                    <div class="skeleton" style="width: 70px; height: 70px;"></div>
+                </div>
+            </div>
+
+            <div class="product-display-product-details" id="detailsSection">
+                <div class="skeleton" style="width: 80%; height: 40px; margin-bottom: 20px;"></div>
+                <div class="skeleton" style="width: 100%; height: 200px; margin-bottom: 20px;"></div>
+                <div class="skeleton" style="width: 100%; height: 150px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <p style="text-align: center;">
+            Did you fall in love with a Jewellery? Simply <b>take a screenshot</b> of the product and its details, 
+            then bring it with you when you <b>visit our store</b>. We’d love to help you find the perfect fit!<br /> 
+            You can also reach out via <b>WhatsApp</b> for instant inquiries—find our details in the 'Contact Us' section below.<br /><br />
+        </p>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sankar Jewellers</h3>
+                <p>Crafting timeless elegance for generations. Your trusted jeweller in Kolkata for premium gold, silver, and platinum jewellry.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p>26, Rakhal Das Addy Road<br>Chetla, Kolkata-700027<br>West Bengal, India</p>
+                <p>47, Rakhal Das Addy Road<br>Chetla, Kolkata-700027<br>West Bengal, India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="tel:+91XXXXXXXXXX">Landline: +91 33 XXXX XXXX</a><br>
+                <a href="tel:+91XXXXXXXXXX">Phone: +91 98300 XXXXX</a><br>
+                <a href="tel:+91XXXXXXXXXX">Alternate: +91 98300 XXXXX</a><br>
+                <a href="mailto:abc@gmail.com">Email: info_abc@gmail.com</a><br>
+                Hours: Mon-Sat, 10 AM - 9 PM
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html#collection">Our Collection</a></li>
+                    <li><a href="./index.html#about_us">About Us</a></li>
+                    <li><a href="./index.html#checkMetalPrices">Gold/Silver Rate Today</a></li>
+                    <li><a href="./CustomizeYourCollection.html">Custom Collection</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer_disclaimer_container">
+                <div class="footer_text_inside">
+                    <h3>T&C applied in all products</h3>
+                    <ul>
+                        <li>Metal value, Gem-stone value, and Jewellery products are subjected to market risk.</li>
+                        <li>Terms and conditions applied.</li>
+                    </ul>
+                </div>
+            </div>
+            <p>&copy; 2026 Sankar Jewellers. All rights reserved. | Designed with excellence</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./ProductDisplay.js"></script>
+</body>
+</html>
