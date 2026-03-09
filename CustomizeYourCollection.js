@@ -90,7 +90,7 @@ function sendWhatsApp() {
 
     message += `\nTotal Estimated Budget: ₹${total}`;
 
-    const phoneNumber = "+91XXXXXXXXXX"; // Replace with actual number
+    const phoneNumber = "+917044504521"; // Replace with actual number
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 }
