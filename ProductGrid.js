@@ -65,6 +65,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         renderProducts(filtered);
     });
+    //display relevant ID
+    function getRelevantPart(inputString) {
+        // Split the string into an array using "@#" as the delimiter
+        const parts = inputString.split("@$");
+
+        // Check if the first part exists and is not an empty string
+        if (parts[0] && parts[0] !== "") {
+            return parts[0];
+        } else {
+            // Return the second part (index 1) if the first is empty
+            return parts[1];
+        }
+    }
 
     // Helper function moved inside or outside
     function renderProducts(list) {
@@ -93,7 +106,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                   </div>
                   <div class="product-price">
                     <div class="price-amount">₹ ${formatCurrency(product.ColumnU)}</div>
-                    <button class="inquire-btn">ID: ${product.ColumnA}</button>
+                    <button class="inquire-btn">ID: ${getRelevantPart(product.ColumnA)}</button>
                   </div>
                 </div>
             `;
