@@ -27,7 +27,21 @@ let product = {
 };
 
 const urlParams = new URLSearchParams(window.location.search);
-const productID = urlParams.has('ID') ? urlParams.get('ID') : 104;
+const productID = urlParams.has('ID') ? urlParams.get('ID') : '@$104';
+
+//display relevant ID
+function getRelevantPart(inputString) {
+    // Split the string into an array using "@#" as the delimiter
+    const parts = inputString.split("@$");
+
+    // Check if the first part exists and is not an empty string
+    if (parts[0] && parts[0] !== "") {
+        return parts[0];
+    } else {
+        // Return the second part (index 1) if the first is empty
+        return parts[1];
+    }
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
     // 1. Fetch products
@@ -38,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             product['badge'] = prodDet.ColumnW;
             let spec = {};
             spec['Category'] = prodDet.ColumnG + " • " + prodDet.ColumnH;
-            spec['Product ID'] = prodDet.ColumnA;
+            spec['Product ID'] = getRelevantPart(prodDet.ColumnA);
 
             if (prodDet.ColumnG.toLowerCase().includes("gold")) {
                 spec['Purity'] = prodDet.ColumnG;
@@ -203,7 +217,6 @@ function createSpecificationTable() {
 
     const table = document.createElement("table");
     table.classList.add("product-display-table");
-
     for (let key in product.specifications) {
         const row = document.createElement("tr");
 
@@ -255,7 +268,7 @@ function createPricingTable() {
         addRow(table, "Discount", discountText);
         addRow(table, `GST (${gstPercent}%)`, formatCurrency(gstAmount));        
 
-        const finalPrice = Math.round(discountAmount + gstAmount, 2);
+        const finalPrice = Number(discountAmount + gstAmount).toFixed(2);
 
         const row = document.createElement("tr");
         row.className = "product-display-total-row";
@@ -282,7 +295,7 @@ function createPricingTable() {
         addRow(table, "Discount", discountText);
         addRow(table, `GST (${gstPercent}%)`, formatCurrency(gstAmount));
 
-        const finalPrice = Math.round(discountAmount + gstAmount, 2);
+        const finalPrice = Number(discountAmount + gstAmount).toFixed(2);
 
         const row = document.createElement("tr");
         row.className = "product-display-total-row";
