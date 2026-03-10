@@ -1,33 +1,34 @@
-﻿//fetching content of spreadsheet
-const a_k = "AIzaSyC_cQUuttIlS_10rsJxnuO7526Gsv4ufRs";
-const spreadsheetId = "1SYq-y_sbLArhOG-Z9g2LdTEutF8omPjTZAh3B3qAVsc";
-let userID = "";
-let passwd = "";
-async function fetchSheetDetails(spreadsheetId, range) {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${a_k}`;
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch products');
+﻿function formatCurrency(num) {
+    num = Number(num).toFixed(2);
+    const formatter = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        // Optional: Set decimal places (default is 2)
+        maximumFractionDigits: 2,
+    });
 
-        const data = await response.json();
-        const detailsFetched = data.values;
-        return detailsFetched;
-    } catch (error) {
-        console.error('Error fetching products:', error);
-        throw error;
-    }
+    return formatter.format(num);
+    /*
+    return "₹" + String(num.toLocaleString('en-IN', {
+        maximumFractionDigits: 2,
+        style: 'currency',
+        currency: 'INR'
+    }));
+    */
 }
 
 async function update24KGold999SilverPrices(range) {
-    sheetDetails = await fetchSheetDetails(spreadsheetId, range);
-    document.getElementById("18k-gold-rate").innerHTML = sheetDetails[2];
-    document.getElementById("22k-gold-rate").innerHTML = sheetDetails[1];
-    document.getElementById("24k-gold-rate").innerHTML = sheetDetails[0];
-    document.getElementById("silver-rate").innerHTML = sheetDetails[6];
+    //sheetDetails = await fetchSheetDetails(spreadsheetId, range);
+    sheetDetails = await sendDataToGAS("update24KGold999SilverPrices")
+    document.getElementById("18k-gold-rate").innerHTML = formatCurrency(String(sheetDetails[2]).trim());
+    document.getElementById("22k-gold-rate").innerHTML = formatCurrency(String(sheetDetails[1]).trim());
+    document.getElementById("24k-gold-rate").innerHTML = formatCurrency(String(sheetDetails[0]).trim());
+    document.getElementById("silver-rate").innerHTML = formatCurrency(String(sheetDetails[6]).trim());
 }
 async function fetchOffersFromGoogleSheet(range) {
     var offersFromSheet = [];
-    var dataFromSheet = await fetchSheetDetails(spreadsheetId, range);
+    //var dataFromSheet = await fetchSheetDetails(spreadsheetId, range);
+    var dataFromSheet = await sendDataToGAS("fetchOffersFromGoogleSheet")
     dataFromSheet.forEach(item => {
         offer = { title: item[0], sub: item[1], img: item[2] };
         offersFromSheet.push(offer);
@@ -179,4 +180,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     await createSlider();
 
 });
+
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjH8D59LiFixoeJ179AYxB_ANOI9lV6SvLKSbTvko68MqixocG4EuXEO2VYKycSuTR/exec";
+//fetching content of spreadsheet
+async function sendDataToGAS(module_desired) {
+    const dataToSend = {
+        module: module_desired,
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        const response = await fetch(WEB_APP_URL, {
+            method: "POST",
+            mode: "cors", // This tells the browser to allow cross-origin
+            redirect: "follow", // CRITICAL: This allows the browser to follow Google's redirect
+            headers: {
+                // IMPORTANT: Use text/plain to avoid the 'OPTIONS' preflight check
+                "Content-Type": "text/plain;charset=utf-8",
+            },
+            body: JSON.stringify(dataToSend) // Turn the object into a string
+        });
+
+        const result = await response.json();
+        console.log("Response from Apps Script:", result);
+        return result.data;
+    } catch (error) {
+        console.error("Fetch error:", error);
+    }
+}
+
 

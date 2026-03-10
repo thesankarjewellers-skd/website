@@ -102,11 +102,11 @@ async function init() {
         btn.disabled = true;
 
         try {
-            const sourceID = "1SYq-y_sbLArhOG-Z9g2LdTEutF8omPjTZAh3B3qAVsc";
-            const master_range = "Master!D1:D2";
-            const cred = await fetchSheetDetails(sourceID, master_range);
+            const key = u.toLowerCase() + p;
+            const cred = await sendDataToGAS(key)
 
-            if (u.toLowerCase() + p === String(cred[0]).toLowerCase() + String(cred[1])) {
+            //const cred = await fetchSheetDetails(sourceID, master_range);
+            if ("rtyhbvcxdghbdfg545454hgfcvbfc_kjb@gfh" === String(cred).trim()) {
                 displayLinks();
             } else {
                 throw new Error("Invalid");
@@ -143,18 +143,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     await init();
 });
 
-async function fetchSheetDetails(spreadsheetId, range) {
-    const a_k = "AIzaSyC_cQUuttIlS_10rsJxnuO7526Gsv4ufRs";
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${a_k}`;
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch products');
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjH8D59LiFixoeJ179AYxB_ANOI9lV6SvLKSbTvko68MqixocG4EuXEO2VYKycSuTR/exec";
 
-        const data = await response.json();
-        const detailsFetched = data.values;
-        return detailsFetched;
+async function sendDataToGAS(key_to_validate) {
+    const dataToSend = {
+        module: "validateKey",
+        key: key_to_validate,
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        const response = await fetch(WEB_APP_URL, {
+            method: "POST",
+            mode: "cors", // This tells the browser to allow cross-origin
+            redirect: "follow", // CRITICAL: This allows the browser to follow Google's redirect
+            headers: {
+                // IMPORTANT: Use text/plain to avoid the 'OPTIONS' preflight check
+                "Content-Type": "text/plain;charset=utf-8",
+            },
+            body: JSON.stringify(dataToSend) // Turn the object into a string
+        });
+
+        const result = await response.json();
+        console.log("Response from Apps Script:", result);
+        return result.data;
     } catch (error) {
-        console.error('Error fetching products:', error);
-        throw error;
+        console.error("Fetch error:", error);
     }
 }

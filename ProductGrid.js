@@ -257,46 +257,6 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
     });
 });
 
-//fetching content of spreadsheet
-const a_k = "AIzaSyDKK039v7qBCELSM0KqMYZYJAGDm4wt_V0";
-const spreadsheetId = "1RM_mBTHeLSRfF7E3BUP3Pd4VqljGKJqTcTwKrhtkxwc";
-const CLIENT_ID = "789103313019-d5uf5qfsk7hrvo69ef7hgjaq1k0p63pr.apps.googleusercontent.com";
-let userID = "";
-let passwd = "";
-async function fetchSheetDetails(spreadsheetId, range) {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${a_k}`;
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch products');
-
-        const data = await response.json();
-        const detailsFetched = data.values;
-        return detailsFetched;
-    } catch (error) {
-        console.error('Error fetching products:', error);
-        throw error;
-    }
-}
-
-async function fetchProductsList(range) {
-    sheetDetails = await fetchSheetDetails(spreadsheetId, range);
-    const productList = []
-    sheetDetails.forEach(product => {
-        const obj = {
-            id: product[0],
-            name: product[1],
-            categoryText: product[2],
-            image: product[3],
-            categories: product[4],
-            badge: product[5],
-            weight: product[6],
-            purity: product[8],
-            price: product[14]
-        };
-        productList.push(obj);
-    });
-    return productList;
-}
 
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjH8D59LiFixoeJ179AYxB_ANOI9lV6SvLKSbTvko68MqixocG4EuXEO2VYKycSuTR/exec";
 
