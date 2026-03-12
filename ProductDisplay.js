@@ -27,7 +27,7 @@ let product = {
 };
 
 const urlParams = new URLSearchParams(window.location.search);
-const productID = urlParams.has('ID') ? urlParams.get('ID') : '@$104';
+const productID = urlParams.has('ID') ? urlParams.get('ID') : '@$100';
 
 //display relevant ID
 function getRelevantPart(inputString) {
@@ -43,73 +43,108 @@ function getRelevantPart(inputString) {
     }
 }
 
+const safeNum = (val) => {
+    const n = parseFloat(val);
+    return isNaN(n) ? 0 : n;
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
+    const detailsContainer = document.getElementById("detailsSection");
+
     // 1. Fetch products
-    allProductDetails = await sendDataToGAS(productID);
-    if (allProductDetails && allProductDetails.length == 1) {
-        allProductDetails.forEach(prodDet => {
-            product['name'] = prodDet.ColumnC;
-            product['badge'] = prodDet.ColumnW;
-            let spec = {};
-            spec['Category'] = prodDet.ColumnG + " • " + prodDet.ColumnH;
-            spec['Product ID'] = getRelevantPart(prodDet.ColumnA);
+    const allProductDetails = await sendDataToGAS(productID);
 
-            if (prodDet.ColumnG.toLowerCase().includes("gold")) {
-                spec['Purity'] = prodDet.ColumnG;
-                spec['Metal'] = "Gold";
-            } else if ((prodDet.ColumnG).toLowerCase().includes("silver")) {
-                spec['Metal'] = "Silver";
-            }
-            spec['Weight'] = (prodDet.ColumnF).toFixed(3) + " gms";
-            spec['Description'] = prodDet.ColumnD = "" ? "Elegant " + prodDet.ColumnE + " " + prodDet.ColumnG + " " + prodDet.ColumnH : prodDet.ColumnD;
-            product['specifications'] = spec;
-            let pricng = {};
-            pricng['metalCost'] = Number(prodDet.ColumnT * prodDet.ColumnF).toFixed(2);
-            pricng['makingCharges'] = Number(Number(prodDet.ColumnT) * Number(prodDet.ColumnF) * Number(prodDet.ColumnN) + Number(prodDet.ColumnM)).toFixed(2);
-            pricng['hallmarkCharges'] = prodDet.ColumnL.toFixed(2);
-            pricng['otherCharges'] = prodDet.ColumnO.toFixed(2);
-            pricng['gstPercent'] = 3;
-            if (prodDet.ColumnP == "") {
-                pricng['discountPercent'] = 0;
-                pricng['cashDiscount'] = 0;
-                pricng['discountText'] = "";
-            } else if (prodDet.ColumnP == "Percentage discount (any value between 1 and 100)") {
-                pricng['discountPercent'] = prodDet.ColumnQ.toFixed(2);
-                pricng['cashDiscount'] = 0;
-                pricng['discountText'] = prodDet.ColumnS;
-            } else if (prodDet.ColumnP == "Cash price discount") {
-                pricng['discountPercent'] = 0;
-                pricng['cashDiscount'] = prodDet.ColumnQ.toFixed(2);
-                pricng['discountText'] = prodDet.ColumnS;
-            } else {
-                pricng['discountPercent'] = 0;
-                pricng['cashDiscount'] = 0;
-                pricng['discountText'] = "";
-            }
-
-            product['pricing'] = pricng;
-            let imgs = [];
-            imgs.push(getURLOfImageFromDrive(prodDet.ColumnI));
-            imgs.push(getURLOfImageFromDrive(prodDet.ColumnJ));
-            imgs.push(getURLOfImageFromDrive(prodDet.ColumnK));
-            product['images'] = imgs;
-        });
+    // 2. Validation Logic
+    if (!allProductDetails || allProductDetails.length === 0) {
+        detailsContainer.innerHTML = "<h3>Product not found.</h3>";
+        return; // Stop execution
     }
-    /* =========================
-        INITIAL RENDER
-    ========================= */
 
+    if (allProductDetails.length > 1) {
+        detailsContainer.innerHTML = "<h3>Technical Error! Multiple matching products found.</h3>";
+        return; // Stop execution
+    }
+
+    // 3. Data Mapping (Only runs if exactly 1 product is found)
+    const prodDet = allProductDetails[0];
+
+    product['name'] = String(prodDet.ColumnC || "").trim();
+    product['badge'] = String(prodDet.ColumnW || "").trim();
+
+    let spec = {};
+    spec['Category'] = `${String(prodDet.ColumnG || "").trim()} • ${String(prodDet.ColumnH || "").trim()}`;
+    spec['Product ID'] = getRelevantPart(String(prodDet.ColumnA || "").trim());
+
+    if (spec['Category'].toLowerCase().includes("gold")) {
+        spec['Purity'] = String(prodDet.ColumnG || "").trim();
+        spec['Metal'] = "Gold";
+    } else if (spec['Category'].toLowerCase().includes("silver")) {
+        spec['Metal'] = "Silver";
+    }
+
+    spec['Weight'] = safeNum(prodDet.ColumnF).toFixed(3) + " gms";
+    spec['Description'] = String(prodDet.ColumnD).trim() === ""
+        ? `Elegant ${String(prodDet.ColumnE || "").trim()} ${String(prodDet.ColumnG || "").trim()} ${String(prodDet.ColumnH || "").trim() }`
+        : String(prodDet.ColumnD).trim();
+
+    product['specifications'] = spec;
+
+    // Pricing Logic
+    let pricng = {};
+    const baseMetalCost = safeNum(prodDet.ColumnT) * safeNum(prodDet.ColumnF);
+    pricng['metalCost'] = baseMetalCost.toFixed(2);
+    pricng['makingCharges'] = (baseMetalCost * safeNum(prodDet.ColumnN) + safeNum(prodDet.ColumnM)).toFixed(2);
+    pricng['hallmarkCharges'] = safeNum(prodDet.ColumnL).toFixed(2);
+    pricng['otherCharges'] = safeNum(prodDet.ColumnO).toFixed(2);
+    pricng['gstPercent'] = 3;
+
+    // Discount Logic
+    const discountType = String(prodDet.ColumnP || "").trim();
+    if (discountType === "Percentage discount (any value between 1 and 100)") {
+        pricng['discountPercent'] = safeNum(prodDet.ColumnQ);
+        pricng['cashDiscount'] = 0;
+        pricng['discountText'] = String(prodDet.ColumnS || "").trim();
+    } else if (discountType === "Cash price discount") {
+        pricng['discountPercent'] = 0;
+        pricng['cashDiscount'] = safeNum(prodDet.ColumnQ);
+        pricng['discountText'] = String(prodDet.ColumnS || "").trim();
+    } else {
+        pricng['discountPercent'] = 0;
+        pricng['cashDiscount'] = 0;
+        pricng['discountText'] = "";
+    }
+
+    product['pricing'] = pricng;
+
+    // Image Mapping
+    product['images'] = [
+        getURLOfImageFromDrive(String(prodDet.ColumnI || "")),
+        getURLOfImageFromDrive(String(prodDet.ColumnJ || "")),
+        getURLOfImageFromDrive(String(prodDet.ColumnK || ""))
+    ].filter(url => url !== ""); // Remove empty strings if an image is missing
+
+    // 4. Final Render
     renderImages();
     renderDetails();
 });
+
+
 function getURLOfImageFromDrive(driveURL) {
-    /*
-        https://drive.google.com/open?id=1uphs7AAbCLDlW1B7Y7YKFNzmnDjFbvfs
-    */
-    var ID = driveURL.replace('https://drive.google.com/open?id=', "")
-    var newURL = 'https://lh3.googleusercontent.com/d/' + ID + '?authuser=1/view';
-    return newURL;
+    if (!driveURL || typeof driveURL !== 'string') return "";
+
+    // Regex to extract the File ID from any Google Drive URL format
+    const match = driveURL.match(/[-\w]{25,}/);
+    const ID = match ? match[0] : null;
+
+    if (ID) {
+        // This is the most reliable "direct" link for display purposes
+        // 's1000' sets the max size to 1000px. Change as needed.
+        return `https://lh3.googleusercontent.com/u/0/d/${ID}?authuser=1/view`;
+    }
+
+    return "";
 }
+
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjH8D59LiFixoeJ179AYxB_ANOI9lV6SvLKSbTvko68MqixocG4EuXEO2VYKycSuTR/exec";
 
 async function sendDataToGAS(productID) {
@@ -248,8 +283,8 @@ function createPricingTable() {
 
     const { metalCost, makingCharges, hallmarkCharges, otherCharges, gstPercent, discountPercent, cashDiscount, discountText } = product.pricing;
 
-    const subtotal = Number(metalCost) + Number(makingCharges) + Number(hallmarkCharges) + Number(otherCharges);
-    const total = Number(subtotal + (subtotal * (gstPercent / 100))).toFixed(2);
+    const subtotal = safeNum(metalCost) + safeNum(makingCharges) + safeNum(hallmarkCharges) + safeNum(otherCharges);
+    const total = safeNum(subtotal + (subtotal * (gstPercent / 100))).toFixed(2);
 
 
     const box = createTableBox("Price Breakdown");
@@ -262,13 +297,13 @@ function createPricingTable() {
 
 
     if (discountPercent > 0) {
-        const discountAmount = subtotal - (subtotal * (discountPercent / 100));
+        const discountAmount = subtotal - (safeNum(makingCharges) * (discountPercent / 100));
         const gstAmount = discountAmount * (gstPercent / 100);
 
         addRow(table, "Discount", discountText);
         addRow(table, `GST (${gstPercent}%)`, formatCurrency(gstAmount));        
 
-        const finalPrice = Number(discountAmount + gstAmount).toFixed(2);
+        const finalPrice = safeNum(discountAmount + gstAmount).toFixed(2);
 
         const row = document.createElement("tr");
         row.className = "product-display-total-row";
@@ -295,7 +330,7 @@ function createPricingTable() {
         addRow(table, "Discount", discountText);
         addRow(table, `GST (${gstPercent}%)`, formatCurrency(gstAmount));
 
-        const finalPrice = Number(discountAmount + gstAmount).toFixed(2);
+        const finalPrice = safeNum(discountAmount + gstAmount).toFixed(2);
 
         const row = document.createElement("tr");
         row.className = "product-display-total-row";
