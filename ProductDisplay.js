@@ -249,31 +249,83 @@ function renderDetails() {
 
 function createSpecificationTable() {
     const box = createTableBox("Product Specifications");
-
     const table = document.createElement("table");
     table.classList.add("product-display-table");
+
     for (let key in product.specifications) {
         const row = document.createElement("tr");
-
         const cell1 = document.createElement("td");
-
         cell1.classList.add("product-display-td");
         cell1.innerText = key;
 
         const cell2 = document.createElement("td");
-
         cell2.classList.add("product-display-td");
         cell2.innerText = product.specifications[key];
 
         row.appendChild(cell1);
         row.appendChild(cell2);
         table.appendChild(row);
+
+        // Inject Certifications immediately after the Description row
+        if (key === "Description") {
+            const certRow = document.createElement("tr");
+            const certCell = document.createElement("td");
+            certCell.colSpan = 2;
+            certCell.classList.add("product-display-td");
+
+            const metal = String(product.specifications['Metal'] || "").toLowerCase();
+            const description = String(product.specifications['Description'] || "").toLowerCase();
+            const isGold = metal.includes("gold");
+            const hasDiamond = description.includes("diamond");
+
+            if (isGold || hasDiamond) {
+                const certContainer = document.createElement("div");
+                certContainer.style.cssText = `
+                    display: flex;
+                    gap: 12px;
+                    margin-top: 10px;
+                    align-items: center; /* Vertical center alignment */
+                    flex-wrap: wrap;    /* Wraps on small mobile screens */
+                `;
+
+                // CSS to maintain height while scaling width
+                const imgStyle = `
+                    height: 75px;         /* Fixed height for uniformity */
+                    width: auto;          /* Width adjusts to maintain aspect ratio */
+                    border: 1px solid #008080; 
+                    border-radius: 4px;
+                    background-color: #f8fafc;
+                    display: block;
+                `;
+
+                // BIS Hallmark Image
+                if (isGold || hasDiamond) {
+                    const bis = document.createElement("img");
+                    // Using a wider dummy to simulate a rectangular hallmark
+                    bis.src = "./images/BIS-certification-india.jpg";
+                    bis.style.cssText = imgStyle;
+                    certContainer.appendChild(bis);
+                }
+
+                // IGI Certified Image
+                if (hasDiamond) {
+                    const igi = document.createElement("img");
+                    // Using a taller dummy to show how width adjusts to the 55px height
+                    igi.src = "./images/cropped-logo_IGI-1.png";
+                    igi.style.cssText = imgStyle;
+                    certContainer.appendChild(igi);
+                }
+
+                certCell.appendChild(certContainer);
+                certRow.appendChild(certCell);
+                table.appendChild(certRow);
+            }
+        }
     }
 
     box.appendChild(table);
     return box;
 }
-
 
 /* =========================
    PRICING TABLE
@@ -293,7 +345,7 @@ function createPricingTable() {
     addRow(table, "Metal Cost", formatCurrency(metalCost));
     addRow(table, "Making Charges", formatCurrency(makingCharges));
     addRow(table, "Hallmark Charges", formatCurrency(hallmarkCharges));
-    addRow(table, "Other Charges", formatCurrency(otherCharges));
+    addRow(table, "Other Charges /Stone Charges", formatCurrency(otherCharges));
 
 
     if (discountPercent > 0) {

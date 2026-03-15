@@ -121,22 +121,22 @@ body {
 }
 
     .hero-slide:nth-child(1) {
-        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/photo-1515562141207-7a88fb7ce338-index-hero.jpeg?w=1920&h=1080&fit=crop');
+        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/photo-1-index-hero.jpeg?w=1920&h=1080&fit=crop');
         animation-delay: 0s;
     }
 
     .hero-slide:nth-child(2) {
-        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/1772292144683.png?w=1920&h=1080&fit=crop');
+        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/photo-2-index-hero.png?w=1920&h=1080&fit=crop');
         animation-delay: 6.67s;
     }
 
     .hero-slide:nth-child(3) {
-        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/photo-1611591437281-460bfbe1220a-index-hero.jpeg?w=1920&h=1080&fit=crop');
+        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/photo-3-index-hero.jpeg?w=1920&h=1080&fit=crop');
         animation-delay: 13.34s;
     }
 
     .hero-slide:nth-child(4) {
-        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/1772292180787.png?w=1920&h=1080&fit=crop');
+        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/photo-4-index-hero.png?w=1920&h=1080&fit=crop');
         animation-delay: 20.0s;
     }
 
