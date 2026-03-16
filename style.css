@@ -1,5 +1,4 @@
 ﻿:root {
-    --color-primary: #1a1410;
     --color-gold: #d4af37;
     --color-gold-light: #f4d03f;
     --color-gold-dark: #b8860b;
@@ -9,6 +8,31 @@
     --color-white: #ffffff;
     --color-border: #e8dcc8;
     --color-text-light: #6b5d4f;
+    --color-primary: #1a1410;
+    --color-body-text: #1a1410;
+    --color-live-rates-background: #ffffff;
+    --color-section-title-h2: #1a1410;
+    --color-filter-btn-text: #1a1410;
+    --color-product-name-text: #1a1410;
+    --color-inquire-btn-background: #1a1410;
+    --color-form-group-label-text: #1a1410;
+    --color-price-breakdown-h4-text: #1a1410;
+    --color-footer-background: #bcc5fe;
+    --color-side-menu-background: #bcc5fe;
+    --color-slideshow-container-background: #1a1410;
+    --color-header-background: #bcc5fe;
+    --color-index-offer-head-zone: rgba(212, 175, 55, 0.3);
+    --color-rate-text: #4a4a4a;
+    --color-logo-text: #4a4a4a;
+    --color-mobile-menu-button: #4a4a4a;
+    --color-close-menu: #4a4a4a;
+    --color-side-menu-content-text: #4a4a4a;
+    --color-side-menu-content-a-hover-text: #4a4a4a;
+    --color-collapsible-btn-text: #4a4a4a;
+    --color-collapsible-content-a: #4a4a4a;
+    --color-footer-section-h3: #4a4a4a;
+    --color-footer-text-color: #4a4a4a;
+    --color-footer-section-a: #4a4a4a;
     --font-display: 'Cormorant Garamond', serif;
     --font-body: 'Quicksand', sans-serif;
 }
@@ -27,7 +51,7 @@ html {
 body {
     font-family: var(--font-body);
     background: var(--color-light);
-    color: var(--color-primary);
+    color: var(--color-body-text);
     line-height: 1.6;
     overflow-x: hidden;
     /* Offset the fixed header height */
@@ -45,7 +69,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(26, 20, 16, 0.95);
+    background: var(--color-header-background);
     backdrop-filter: blur(10px);
     padding: 1rem 2rem;
     z-index: 1000;
@@ -67,7 +91,7 @@ body {
     font-family: var(--font-display);
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-gold);
+    color: var(--color-logo-text);
     text-decoration: none;
     letter-spacing: 0.05em;
 }
@@ -228,7 +252,7 @@ body {
 
 /* Live Rates Section */
 .live-rates {
-    background: var(--color-primary);
+    background: var(--color-live-rates-background);
     padding: 3rem 0;
     position: relative;
     overflow: hidden;
@@ -296,7 +320,7 @@ body {
     .rate-card .price {
         font-size: 2.5rem;
         font-weight: 700;
-        color: var(--color-white);
+        color: var(--color-rate-text);
         margin-bottom: 0.5rem;
         font-family: var(--font-display);
     }
@@ -324,7 +348,7 @@ body {
         font-family: var(--font-display);
         font-size: clamp(2.5rem, 5vw, 4rem);
         font-weight: 700;
-        color: var(--color-primary);
+        color: var(--color-section-title-h2);
         margin-bottom: 1rem;
     }
 
@@ -348,7 +372,7 @@ body {
     padding: 0.8rem 2rem;
     background: var(--color-white);
     border: 2px solid var(--color-border);
-    color: var(--color-primary);
+    color: var(--color-filter-btn-text);
     font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.95rem;
@@ -461,7 +485,7 @@ body {
     font-family: var(--font-display);
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-product-name-text);
     margin-bottom: 0.8rem;
 }
 
@@ -496,7 +520,7 @@ body {
 }
 
 .inquire-btn {
-    background: var(--color-primary);
+    background: var(--color-inquire-btn-background);
     color: var(--color-white);
     padding: 0.6rem 1.5rem;
     border: none;
@@ -526,7 +550,7 @@ body {
     .form-group label {
         font-weight: 600;
         margin-bottom: 0.5rem;
-        color: var(--color-primary);
+        color: var(--color-form-group-label-text);
     }
 
     .form-group input,
@@ -574,7 +598,7 @@ body {
     .price-breakdown h4 {
         font-family: var(--font-display);
         font-size: 1.5rem;
-        color: var(--color-primary);
+        color: var(--color-price-breakdown-h4-text);
         margin-bottom: 1rem;
     }
 
@@ -595,8 +619,8 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--color-primary);
-    color: var(--color-light);
+    background: var(--color-footer-background);
+    color: var(--color-footer-text-color);
     padding: 4rem 2rem 2rem;
 }
 
@@ -612,7 +636,7 @@ body {
 .footer-section h3 {
     font-family: var(--font-display);
     font-size: 1.5rem;
-    color: var(--color-gold);
+    color: var(--color-footer-section-h3);
     margin-bottom: 1.5rem;
 }
 
@@ -627,7 +651,7 @@ body {
 }
 
 .footer-section a {
-    color: var(--color-light);
+    color: var(--color-footer-section-a);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -648,7 +672,7 @@ body {
 .mobile-menu-btn {
     background: none;
     border: none;
-    color: var(--color-gold);
+    color: var(--color-mobile-menu-button);
     font-size: 1.8rem;
     cursor: pointer;
     order: -1; /* Keeps it on the left if desired */
@@ -671,7 +695,7 @@ body {
     left: -350px; /* Hidden off-screen to the left */
     width: 320px;
     height: 100%;
-    background: var(--color-primary);
+    background: var(--color-side-menu-background);
     z-index: 2000;
     transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 5px 0 15px rgba(0,0,0,0.5);
@@ -696,7 +720,7 @@ body {
 .close-menu {
     background: none;
     border: none;
-    color: var(--color-gold);
+    color: var(--color-close-menu);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -710,7 +734,7 @@ body {
     .side-menu-content a, .collapsible-btn {
         display: block;
         padding: 1rem 2rem;
-        color: var(--color-light);
+        color: var(--color-side-menu-content-text);
         text-decoration: none;
         font-size: 1.1rem;
         border: none;
@@ -724,7 +748,7 @@ body {
 
         .side-menu-content a:hover, .collapsible-btn:hover {
             background: rgba(212, 175, 55, 0.1);
-            color: var(--color-gold);
+            color: var(--color-side-menu-content-a-hover-text);
         }
 
 .collapsible-content {
@@ -737,7 +761,7 @@ body {
     .collapsible-content a {
         display: block;
         padding: 0.8rem 3rem;
-        color: var(--color-light);
+        color: var(--color-collapsible-content-a);
         text-decoration: none;
         font-size: 0.95rem;
     }
@@ -761,7 +785,7 @@ body {
     padding: 1rem 2rem;
     background: none;
     border: none;
-    color: var(--color-light);
+    color: var(--color-collapsible-btn-text);
     font-family: var(--font-body);
     font-size: 1.1rem;
     cursor: pointer;
@@ -933,7 +957,7 @@ section, .product-display-container, div[id] {
     height: 350px; /* Matching your .product-image height */
     position: relative;
     overflow: hidden;
-    background: var(--color-primary);
+    background: var(--color-slideshow-container-background);
 }
 
 .slide-item {

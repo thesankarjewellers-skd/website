@@ -6,6 +6,7 @@ styleSheet.textContent = `
         --bg-dark: #0f172a;
         --glass: rgba(255, 255, 255, 0.05);
         --error: #ef4444;
+        --light-background: #ffffff;
     }
 
     /* Update viewport to be responsive within its parent */
@@ -24,7 +25,7 @@ styleSheet.textContent = `
         -webkit-backdrop-filter: blur(15px);
         padding: 2rem; /* Reduced for mobile */
         border-radius: 1.5rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.9);
         width: 100%; 
         max-width: 360px; /* Perfect for 360px screens */
         z-index: 10; 
@@ -73,7 +74,7 @@ async function init() {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-        <h1 style="color:white; margin-bottom:2rem; font-family: 'Cormorant Garamond';">Admin Login</h1>
+        <h1 style="color:black; margin-bottom:2rem; font-family: 'Cormorant Garamond';">Admin Login</h1>
         <form id="loginForm" autocomplete="off">
             <div class="field-group">
                 <input type="text" id="user" class="input-box" placeholder=" " required autocomplete="off">

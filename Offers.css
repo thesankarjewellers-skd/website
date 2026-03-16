@@ -151,3 +151,36 @@ th {
     border-bottom: 2px solid #d4af37;
     padding-bottom: 5px;
 }
+
+.lang-toggle-btn {
+    margin-right: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1.5px solid currentColor;
+    color: inherit;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, color 0.2s;
+    margin-left: auto;
+}
+@media (max-width: 366px) {
+    .lang-toggle-btn {
+        margin-top: 20px;
+    }
+
+
+        .lang-toggle-btn:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+    .lang-icon {
+        font-size: 1rem;
+    }

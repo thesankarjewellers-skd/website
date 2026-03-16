@@ -78,7 +78,7 @@ style.textContent = `
                 .index-offer-img-zone { height: 60%; width: 100%; overflow: hidden; border-radius: 8px 8px 0 0; }
 
                 .index-offer-head-zone {
-                    height: 15%; background: var(--dark_offer); color: var(--gold_offer);
+                    height: 15%; background: var(--color-index-offer-head-zone); color: var(--gold_offer);
                     display: flex; align-items: center; justify-content: center;
                     text-transform: uppercase; letter-spacing: 2px; font-weight: bold;
                     padding: 0 10px; text-align: center;

@@ -224,6 +224,44 @@ function renderImages() {
     });
 
     container.appendChild(thumbContainer);
+    //add the section for promises
+    const promises_container = document.createElement("div");
+    promises_container.innerHTML = `
+        <section class="trust-signals">
+            <div class="signals-grid">
+                <div class="signal-item">
+                    <i class="fas fa-gem"></i>
+                    <p>IGI Certified Diamonds</p>
+                </div>
+                <div class="signal-item">
+                    <i class="fas fa-balance-scale"></i>
+                    <p>0% Deduction on Gold Exchange</p>
+                </div>
+                <div class="signal-item">
+                    <i class="fas fa-retweet"></i>
+                    <p>Easy Product Exchange</p>
+                </div>
+                <div class="signal-item">
+                    <i class="fas fa-tools"></i>
+                    <p>Eternal Care Assurance</p>
+                </div>
+                
+                <div class="signal-item">
+                    <i class="fas fa-award"></i>
+                    <p>BIS Hallmarked Pure Gold</p>
+                </div>
+                <div class="signal-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <p>Guaranteed Buyback</p>
+                </div>
+                <div class="signal-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <p>7 Days Return Policy</p>
+                </div>
+            </div>
+        </section>
+    `;
+    container.appendChild(promises_container);
 }
 /* =========================
    DETAILS SECTION
@@ -476,3 +514,25 @@ function formatCurrency(num) {
     }));
     */
 }
+
+// Simple Fade-in Animation on Scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll('.signal-item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, { threshold: 0.1 });
+
+    items.forEach(item => {
+        // Set initial state
+        item.style.opacity = "0";
+        item.style.transform = "translateY(20px)";
+        item.style.transition = "all 0.6s ease-out";
+        observer.observe(item);
+    });
+});

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শংকর জুয়েলার্স | কলকাতার প্রিমিয়াম গহনার দোকান</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Offers.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleSideMenu()">☰</button>
+            <a href="./index.html#home" class="logo">শংকর জুয়েলার্স</a>
+        </nav>
+    </header>
+    <div id="sideMenu" class="side-menu">
+        <div class="side-menu-header">
+            <span class="logo">শংকর জুয়েলার্স</span>
+            <button class="close-menu" onclick="toggleSideMenu()">✕</button>
+        </div>
+
+        <div class="side-menu-content">
+            <a href="./index.html#home" onclick="toggleSideMenu()">হোম</a>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">মহিলা <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Earrings" onclick="toggleSideMenu()">কানের দুল</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">পেন্ডেন্ট</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Necklace" onclick="toggleSideMenu()">নেকলেস</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Bangles" onclick="toggleSideMenu()">চুড়ি</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Ring" onclick="toggleSideMenu()">আংটি</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">ব্রেসলেট</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Chain" onclick="toggleSideMenu()">চেইন</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Mangalsutra" onclick="toggleSideMenu()">মঙ্গলসূত্র</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Nosepin" onclick="toggleSideMenu()">নাকছাবি</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Mang Tikka" onclick="toggleSideMenu()">মাং টিক্কা</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=Anklets" onclick="toggleSideMenu()">পায়েল</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Gold&product=OtherProducts" onclick="toggleSideMenu()">অন্যান্য পণ্য</a>
+                    <a href="./ProductGrid.html?category=Women&metalType=Silver&product=All" onclick="toggleSideMenu()">রুপার সংগ্রহ</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">পুরুষ <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Chain" onclick="toggleSideMenu()">চেইন</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Bangles" onclick="toggleSideMenu()">চুড়ি</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">পেন্ডেন্ট</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Tie Pin" onclick="toggleSideMenu()">টাই পিন</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Ring" onclick="toggleSideMenu()">আংটি</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Brooch" onclick="toggleSideMenu()">ব্রোচ</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Button" onclick="toggleSideMenu()">বোতাম</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Cufflink" onclick="toggleSideMenu()">কাফলিংক</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">ব্রেসলেট</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Gold&product=Other Products" onclick="toggleSideMenu()">অন্যান্য পণ্য</a>
+                    <a href="./ProductGrid.html?category=Men&metalType=Silver&product=All" onclick="toggleSideMenu()">রুপার সংগ্রহ</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">শিশু <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Earrings" onclick="toggleSideMenu()">কানের দুল</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Pendant" onclick="toggleSideMenu()">পেন্ডেন্ট</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Bracelet" onclick="toggleSideMenu()">ব্রেসলেট</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=Ring" onclick="toggleSideMenu()">আংটি</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=baby bracelet (nazariya)" onclick="toggleSideMenu()">নজরিয়া (শিশু ব্রেসলেট)</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Gold&product=OtherProducts" onclick="toggleSideMenu()">অন্যান্য পণ্য</a>
+                    <a href="./ProductGrid.html?category=Kids&metalType=Silver&product=All" onclick="toggleSideMenu()">রুপার সংগ্রহ</a>
+                </div>
+            </div>
+
+            <div class="collapsible-item">
+                <button class="collapsible-btn" onclick="toggleAccordion(this)">রুপা <span>+</span></button>
+                <div class="collapsible-content">
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Anklets" onclick="toggleSideMenu()">নূপুর (পায়েল)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Mal (Thick Anklets)" onclick="toggleSideMenu()">মল (মোটা পায়েল)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Angat (Toe Rings)" onclick="toggleSideMenu()">আংটি (পায়ের আঙুলের আংটি)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Khopar Kata (Hair Pins)" onclick="toggleSideMenu()">খোঁপার কাঁটা (চুলের কাঁটা)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Sindoor Kouto (Sindoor Box)" onclick="toggleSideMenu()">সিঁদুর কৌটো</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Pancha Pradip (Lamp)" onclick="toggleSideMenu()">পঞ্চপ্রদীপ (প্রদীপ)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Kosh-Kushi (Spoon)" onclick="toggleSideMenu()">কোষ-কুশি (চামচ)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Thali (Plate)" onclick="toggleSideMenu()">থালি (থালা)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Bati (Bowl)" onclick="toggleSideMenu()">বাটি</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Goti (Small Tumbler)" onclick="toggleSideMenu()">গোটি (ছোট গ্লাস)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Jhunjhuni (Rattle Toy)" onclick="toggleSideMenu()">ঝুনঝুনি (খেলনা)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=baby bracelet (nazariya)" onclick="toggleSideMenu()">নজরিয়া (শিশু ব্রেসলেট)</a>
+                    <a href="./ProductGrid.html?category=All&metalType=Silver&product=Other Products" onclick="toggleSideMenu()">অন্যান্য পণ্য</a>
+                </div>
+            </div>
+
+            <a href="./CustomizeYourCollection.html" onclick="toggleSideMenu()">কাস্টম সংগ্রহ</a>
+            <a href="./Offers.html" onclick="toggleSideMenu()">অফার</a>
+            <a href="./index.html#about_us" onclick="toggleSideMenu()">আমাদের সম্পর্কে</a>
+            <a href="./index.html#contact" onclick="toggleSideMenu()">যোগাযোগ</a>
+        </div>
+    </div>
+
+    <div id="menuOverlay" class="menu-overlay" onclick="toggleSideMenu()"></div>
+
+    <!-- Swarna Yojna Section -->
+    <section class="products-section">
+        <button class="lang-toggle-btn" id="langToggleBtn" onclick="window.location.href='./Offers.html'" title="Switch Language">
+            <span class="lang-icon">🌐</span>
+            <span id="langLabel">English</span>
+        </button>
+        <div class="container">
+            <div class="section-title">
+                <h2>স্বর্ণ যোজনা</h2>
+                <p id="section_title">১১ মাস বিনিয়োগ করুন, ১২ মাসের সুবিধা পান! আপনার পরবর্তী সোনার গহনা কেনার সবচেয়ে স্মার্ট উপায়।</p>
+            </div>
+
+            <div class="responsive-container">
+
+                <div class="content-box">
+                    <img src="./Offer_templates/Eleven_plus_one_scheme_Bengali.png" alt="স্বর্ণ যোজনা স্কিম">
+                </div>
+
+                <div class="content-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="table_top_left"></th>
+                                <th>মাস</th>
+                                <th>মাসিক বিনিয়োগ</th>
+                                <th class="table_top_right">মোট অবদান</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">১</td>
+                                <td>৫০০০</td>
+                                <td>৫,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">২</td>
+                                <td>৫০০০</td>
+                                <td>১০,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">৩</td>
+                                <td>৫০০০</td>
+                                <td>১৫,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">৪</td>
+                                <td>৫০০০</td>
+                                <td>২০,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">৫</td>
+                                <td>৫০০০</td>
+                                <td>২৫,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">৬</td>
+                                <td>৫০০০</td>
+                                <td>৩০,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">৭</td>
+                                <td>৫০০০</td>
+                                <td>৩৫,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">৮</td>
+                                <td>৫০০০</td>
+                                <td>৪০,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">৯</td>
+                                <td>৫০০০</td>
+                                <td>৪৫,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">১০</td>
+                                <td>৫০০০</td>
+                                <td>৫০,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment">আপনি দেন</td>
+                                <td class="month_count">১১</td>
+                                <td>৫০০০</td>
+                                <td>৫৫,০০০</td>
+                            </tr>
+                            <tr>
+                                <td class="payment"><s class="reduced_font_size">আপনি দেন</s>&nbsp;<i class="our_contribution">আমরা দিই</i></td>
+                                <td class="our_contribution month_count"><i>১২</i></td>
+                                <td><i class="our_contribution">৫০০০</i></td>
+                                <td>৫৫,০০০ + <i class="our_contribution">৫০০০</i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="our_contribution">
+                        ধরুন আপনি প্রতি মাসে ₹৫,০০০/- বিনিয়োগ করেন। ১২তম মাসে আপনি ₹৬০,০০০/- মূল্যের পছন্দের গহনা পাওয়ার যোগ্য হবেন।
+                        যদিও আপনি মাত্র ₹৫৫,০০০/- দিয়েছেন। (শর্ত প্রযোজ্য)<sup class="t_c_applied">*</sup>
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>সঞ্চয়ের শিল্প: একটি উত্তরাধিকারের সূচনা</h3>
+            <br />
+            <b>সচেতনভাবে আপনার সংগ্রহ গড়ুন</b><br />
+            সত্যিকারের মার্জিততা কখনও তাৎক্ষণিক সিদ্ধান্তের ফল নয়; এটি একটি দৃষ্টিভঙ্গির পরিণতি। আমরা আপনাকে আমন্ত্রণ জানাচ্ছি আমাদের <b>বিশেষ ১১+১ অধিগ্রহণ পরিকল্পনা</b>-এ অংশ নিতে—আপনার ব্যক্তিগত গহনার উত্তরাধিকার গড়ে তোলার একটি পরিশীলিত পদ্ধতি।
+            <br /><br />
+            <b>অংশীদারিত্বের সুবিধা</b><br />
+            এই বিশেষ গোষ্ঠীর অংশগ্রহণকারী হিসেবে আপনি এগারো মাস ধরে আপনার পছন্দমতো মাসিক বিনিয়োগ (ন্যূনতম ₹৫০০/- প্রতি মাস) করবেন। দ্বাদশ মাসে, আপনার ধারাবাহিক আনুগত্যের প্রতি কৃতজ্ঞতার নিদর্শন হিসেবে, <b>আমাদের প্রতিষ্ঠান আপনার পক্ষে শেষ কিস্তিটি প্রদান করবে।</b>
+            <br /><br />
+            <b>ধারাবাহিকতার উদযাপন</b><br />
+            আপনি একটি গুরুত্বপূর্ণ বার্ষিকী, একটি মাইলফলক জন্মদিন, বা কেবল আপনার ব্যক্তিগত সংগ্রহ সমৃদ্ধ করতে চাইছেন—এই প্রোগ্রামটি নিশ্চিত করে যে বার্ষিক যাত্রার শেষে আপনার জন্য অসাধারণ কারুকার্যের একটি বিশেষ গহনা অপেক্ষা করবে।
+            <br /><br />
+            <b>এই গোষ্ঠীর সুবিধাসমূহ:</b>
+            <br />
+            <ul class="format_text">
+                <li>
+                    <b>বিনামূল্যে শেষ কিস্তি:</b> ১২তম মাসের কিস্তি আমাদের প্রতিষ্ঠান প্রদান করবে।
+                </li>
+                <li>
+                    <b>মূল্য সুরক্ষা:</b> ভবিষ্যতের ক্রয়ের মূল্য আজই নিশ্চিত করুন।
+                </li>
+                <li>
+                    <b>অগ্রাধিকার প্রিভিউ সুবিধা:</b> স্কিম পরিপক্ক হওয়ার সাথে সাথে নতুন হাই-জুয়েলারি সংগ্রহের অগ্রাধিকার দর্শনের সুযোগ।
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="section-title">
+                <h2>স্বর্ণ সঞ্চয়</h2>
+                <p id="section_title">মাসে মাসে বিনিয়োগ করুন। সোনা বুক করুন। বিশেষ পুরস্কার পান।</p>
+            </div>
+            <div class="responsive-container">
+                <div class="content-box">
+                    <img src="./Offer_templates/Swarna_sanchay_scheme_Bengali.png" alt="স্বর্ণ সঞ্চয় স্কিম">
+                </div>
+
+                <div class="content-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="table_top_left month_count">মাস</th>
+                                <th>মাসিক <br />বিনিয়োগ</th>
+                                <th>মোট <br />বিনিয়োগ</th>
+                                <th>বর্তমান সোনার <br />মূল্য</th>
+                                <th class="table_top_right">লাভ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="month_count">১</td>
+                                <td>১২০০০</td>
+                                <td>১২০০০</td>
+                                <td>১২৯৬০</td>
+                                <td>৯৬০</td>
+                            </tr>
+                            <tr>
+                                <td class="month_count">৩</td>
+                                <td>১২০০০</td>
+                                <td>৩৬০০০</td>
+                                <td>৩৮৮৮০</td>
+                                <td>২৮৮০</td>
+                            </tr>
+                            <tr>
+                                <td class="month_count">৬</td>
+                                <td>১২০০০</td>
+                                <td>১২০০০</td>
+                                <td>১২৯৬০</td>
+                                <td>৫৭৬০</td>
+                            </tr>
+                            <tr>
+                                <td class="month_count">৯</td>
+                                <td>১২০০০</td>
+                                <td>১২০০০</td>
+                                <td>১২৯৬০</td>
+                                <td>৮৬৪০</td>
+                            </tr>
+                            <tr>
+                                <td class="month_count">১২</td>
+                                <td>১২০০০</td>
+                                <td>১৪৪০০০</td>
+                                <td>১৫৫৫২০</td>
+                                <td>১১৫২০</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="our_contribution">
+                        (শর্ত প্রযোজ্য)<sup class="t_c_applied">*</sup>
+                    </p>
+                    <h3>উপরের উদাহরণটি দেখাচ্ছে: স্বর্ণ সঞ্চয় থেকে আপনি কীভাবে উপকৃত হবেন</h3>
+                    ধরুন:
+                    <br />
+                    মাসিক বিনিয়োগ: ₹১২,০০০
+                    <br />
+                    যদি এক মাসে সোনার দাম ৮% বাড়ে, তাহলে:
+                    এক মাস পরে বিনিয়োগের মূল্য হবে: ₹১২,০০০ + ₹৯৬০ = ₹১২,৯৬০
+                    <br />
+                    ৩ মাসে মোট বিনিয়োগ হবে: ₹৩৬,০০০
+                    <br />যদি ৩ মাসে সোনার দাম ৮% বাড়ে, তাহলে:<br />
+                    ৩ মাস পরে মূল্য হবে: ₹৩৬,০০০ + ₹২,৮৮০ = ₹৩৮,৮৮০
+                    <br />যদি ৬ মাসে সোনার দাম ৮% বাড়ে, তাহলে:<br />
+                    ৬ মাস পরে মূল্য হবে: ₹৭২,০০০ + ₹৫,৭৬০ = ₹৭৭,৭৬০
+                    <br />যদি ৯ মাসে সোনার দাম ৮% বাড়ে, তাহলে:<br />
+                    ৯ মাস পরে মূল্য হবে: ₹১,০৮,০০০ + ₹৮,৬৪০ = ₹১,১৬,৬৪০
+                    <br />যদি ১২ মাসে সোনার দাম ৮% বাড়ে, তাহলে:<br />
+                    ১২ মাস পরে মূল্য হবে: ₹১,৪৪,০০০ + ₹১১,৫২০ = ₹১,৫৫,৫২০
+                    <br />
+                    অতএব, মেয়াদ: ১২ মাস
+                    <br />
+                    মোট বিনিয়োগ: ₹১,৪৪,০০০
+                    <br />
+                    বর্তমান মূল্য: ₹১,৫৫,৫২০
+                    <br />
+                    লাভ: ₹১১,৫২০
+
+                    (উদাহরণটি ৮% সোনার মূল্য বৃদ্ধির উপর ভিত্তি করে। প্রকৃত ফলাফল বাজারের হারের উপর নির্ভর করে।)
+                </div>
+
+            </div>
+            <h3>স্বর্ণ সঞ্চয় – আপনার সোনার সম্পদ গড়ার স্মার্ট উপায়</h3>
+            <br />
+            সোনা সবসময় সমৃদ্ধি, নিরাপত্তা এবং চিরন্তন মূল্যের প্রতীক। <b>স্বর্ণ সঞ্চয়</b>-এর মাধ্যমে আপনি এখন আপনার মাসিক সঞ্চয়কে নিশ্চিত সোনার মালিকানায় রূপান্তরিত করতে পারবেন—এবং সাথে পাবেন একচেটিয়া সুবিধা ও বিশেষ সুযোগ।
+            <br /><br />
+            এই অনন্য সোনার সঞ্চয় পরিকল্পনাটি আপনাকে প্রতি মাসে পদ্ধতিগতভাবে বিনিয়োগ করতে এবং বর্তমান বাজার মূল্যে সোনা বুক করতে দেয়, যা আপনাকে ভবিষ্যতের মূল্য বৃদ্ধি থেকে রক্ষা করে। একজন মূল্যবান স্বর্ণ সঞ্চয় সদস্য হিসেবে আপনি একটি <b>বিশেষ গোল্ড বুকিং কার্ডও</b> পাবেন, যা আপনাকে অগ্রাধিকার সুবিধা ও একচেটিয়া অফার এনে দেবে।
+            <br /><br />
+            <hr />
+            <br />
+            <h3>স্বর্ণ সঞ্চয় কীভাবে কাজ করে</h3>
+
+            <b>স্বর্ণ সঞ্চয়</b>-এ আপনি কেবল:
+            <ul class="format_text">
+                <li>
+                    <b>প্রতি মাসে ন্যূনতম ₹৫০০ দিয়ে শুরু করুন।</b> আপনি যত খুশি অতিরিক্ত জমা দিতে পারেন, তবে প্রতি ক্যালেন্ডার মাসে অন্তত একবার অবদান রাখতে হবে।
+                </li>
+                <li>
+                    আপনার পছন্দের বিনিয়োগ মেয়াদ বেছে নিন—যেমন ১, ২ বা ৫ বছর—এবং সেই পুরো মেয়াদ ধরে বিনিয়োগ চালিয়ে যান।
+                </li>
+                <li>
+                    নথিভুক্তির সময় বা স্কিম চলাকালীন <b>আজকের রেটে সোনা বুক করুন।</b>
+                </li>
+                <li>
+                    একটি বিশেষ সুবিধা হিসেবে <b>স্পেশাল গোল্ড বুকিং কার্ড</b> পান।
+                </li>
+                <li>
+                    সঞ্চিত মূল্য ব্যবহার করে সোনার গহনা বা কয়েন কিনুন।
+                </li>
+            </ul>
+            এটি শৃঙ্খলাবদ্ধ সঞ্চয় নিশ্চিত করার পাশাপাশি আপনাকে ক্রমবর্ধমান সোনার দামের বিরুদ্ধে সুরক্ষিত রাখে।
+            <br /><br />
+            <hr />
+            <br />
+            <h3>স্বর্ণ সঞ্চয়ের একচেটিয়া সুবিধাসমূহ</h3>
+            <ol class="format_text">
+                <li>
+                    <b>সোনার মূল্য বৃদ্ধির বিরুদ্ধে সুরক্ষা</b><br />
+                    আজকের রেটে সোনা বুক করুন এবং ভবিষ্যতে বেশি দাম দেওয়া এড়িয়ে চলুন।
+                </li>
+                <li>
+                    <b>শৃঙ্খলাবদ্ধ মাসিক সঞ্চয়</b><br />
+                    ছোট ছোট মাসিক বিনিয়োগকে মূল্যবান সোনার সম্পদে রূপান্তরিত করুন।
+                </li>
+                <li>
+                    <b>বিশেষ গোল্ড বুকিং কার্ড</b><br />
+                    অগ্রাধিকার বুকিং, একচেটিয়া সেবা এবং বিশেষ সুবিধা উপভোগ করুন।
+                </li>
+                <li>
+                    <b>নমনীয় রিডেম্পশন</b><br />
+                    সঞ্চিত মূল্য গহনা, কয়েন বা সোনার বার কিনতে ব্যবহার করুন।
+                </li>
+                <li>
+                    <b>মূল্য বৃদ্ধির মাধ্যমে সম্পদ গঠন</b><br />
+                    সময়ের সাথে সাথে সোনার প্রাকৃতিক মূল্য বৃদ্ধির সুবিধা নিন।
+                </li>
+            </ol>
+            <br />
+            <hr />
+            <br />
+
+        </div>
+    </section>
+    <section id="scheme-calculator">
+        <div class="section-title">
+            <h2>স্কিম ক্যালকুলেটর</h2>
+            <p>আমাদের স্কিম এবং আপনার লাভ মূল্যায়ন করুন।</p>
+        </div>
+
+        <div class="content-box">
+            <h3 class="scheme-card-title">স্বর্ণ সঞ্চয়</h3>
+            <div class="scheme-input-wrapper">
+                <label class="scheme-label">মাসিক বিনিয়োগ:</label>
+                <input type="number" id="sanchayAmount" class="scheme-field" value="12000" min="12000" oninput="updateCalculators()">
+            </div>
+
+            <div class="scheme-scroll-area">
+                <table class="scheme-table">
+                    <thead>
+                        <tr>
+                            <th class="scheme-th" rowspan="2">মাস</th>
+                            <th class="scheme-th" rowspan="2">মোট বিনিয়োগ</th>
+                            <th class="scheme-th" colspan="2">৮% বৃদ্ধি</th>
+                            <th class="scheme-th" colspan="2">৯% বৃদ্ধি</th>
+                            <th class="scheme-th" colspan="2">১০% বৃদ্ধি</th>
+                        </tr>
+                        <tr>
+                            <th class="scheme-th">মূল্য</th>
+                            <th class="scheme-th">লাভ</th>
+                            <th class="scheme-th">মূল্য</th>
+                            <th class="scheme-th">লাভ</th>
+                            <th class="scheme-th">মূল্য</th>
+                            <th class="scheme-th">লাভ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sanchayBody"></tbody>
+                </table>
+            </div>
+            <p class="scheme-note">* আরও মূল্য পরিস্থিতি দেখতে অনুভূমিকভাবে সোয়াইপ করুন।</p>
+        </div>
+
+        <div class="content-box">
+            <h3 class="scheme-card-title">স্বর্ণ যোজনা</h3>
+            <div class="scheme-input-wrapper">
+                <label class="scheme-label">মাসিক বিনিয়োগ (ন্যূনতম ₹৫০০):</label>
+                <input type="number" id="yojnaAmount" class="scheme-field" value="5000" min="500" oninput="updateCalculators()">
+            </div>
+
+            <div class="scheme-scroll-area">
+                <table class="scheme-table">
+                    <thead>
+                        <tr>
+                            <th class="scheme-th table_top_left">মাস</th>
+                            <th class="scheme-th">আপনি দেন</th>
+                            <th class="scheme-th">আমরা দিই</th>
+                            <th class="scheme-th table_top_right">মোট</th>
+                        </tr>
+                    </thead>
+                    <tbody id="yojnaBody"></tbody>
+                </table>
+            </div>
+            <p class="scheme-result-text" id="yojnaResult">মোট পরিপক্কতা মূল্য: ₹৬০,০০০</p>
+        </div>
+
+        <script type="text/javascript">
+
+            function calculateSanchay() {
+                const amount = parseFloat(document.getElementById('sanchayAmount').value) || 0;
+                const tbody = document.getElementById('sanchayBody');
+                tbody.innerHTML = '';
+
+                for (let i = 1; i <= 12; i++) {
+                    const invested = amount * i;
+
+                    // Calculation Helper
+                    const getStats = (rate) => {
+                        const annualRate = rate / 100;
+                        const value = invested * (1 + (annualRate * i / 12));
+                        const profit = value - invested;
+                        return { val: Math.round(value), prof: Math.round(profit) };
+                    };
+
+                    const scenario8 = getStats(8);
+                    const scenario9 = getStats(9);
+                    const scenario10 = getStats(10);
+
+                    tbody.innerHTML += `<tr>
+            <td class="scheme-td">${i}</td>
+            <td class="scheme-td">₹${invested.toLocaleString()}</td>
+            <td class="scheme-td">₹${scenario8.val.toLocaleString()}</td>
+            <td class="scheme-td" style="color:green">+₹${scenario8.prof.toLocaleString()}</td>
+            <td class="scheme-td">₹${scenario9.val.toLocaleString()}</td>
+            <td class="scheme-td" style="color:green">+₹${scenario9.prof.toLocaleString()}</td>
+            <td class="scheme-td">₹${scenario10.val.toLocaleString()}</td>
+            <td class="scheme-td" style="color:green">+₹${scenario10.prof.toLocaleString()}</td>
+        </tr>`;
+                }
+            }
+
+            function updateCalculators() {
+                calculateSanchay();
+                calculateYojna();
+            }
+
+            function calculateYojna() {
+                const amount = parseFloat(document.getElementById('yojnaAmount').value) || 0;
+                const tbody = document.getElementById('yojnaBody');
+                tbody.innerHTML = '';
+
+                for (let i = 1; i <= 12; i++) {
+                    const userPays = i <= 11 ? amount : 0;
+                    const storePays = i === 12 ? amount : 0;
+                    tbody.innerHTML += `<tr>
+            <td class="scheme-td">${i}</td>
+            <td class="scheme-td">₹${userPays}</td>
+            <td class="scheme-td" style="color:brown; font-weight:bold;">${storePays ? '₹' + storePays : '-'}</td>
+            <td class="scheme-td">₹${amount * i}</td>
+        </tr>`;
+                }
+                document.getElementById('yojnaResult').innerText = `মোট পরিপক্কতা মূল্য: ₹${amount * 12}`;
+            }
+
+            document.addEventListener('DOMContentLoaded', updateCalculators);
+        </script>
+    </section>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>শংকর জুয়েলার্স</h3>
+                <p>প্রজন্মের পর প্রজন্ম ধরে চিরন্তন মার্জিততার কারিগর। কলকাতায় প্রিমিয়াম সোনা, রুপা ও প্লাটিনাম গহনার জন্য আপনার বিশ্বস্ত জুয়েলার।</p>
+            </div>
+            <div class="footer-section">
+                <h3>আমাদের দোকানে আসুন</h3>
+                <p>২৬, রাখাল দাস অডি রোড<br>চেতলা, কলকাতা-৭০০০২৭<br>পশ্চিমবঙ্গ, ভারত</p>
+                <p>৪৭, রাখাল দাস অডি রোড<br>চেতলা, কলকাতা-৭০০০২৭<br>পশ্চিমবঙ্গ, ভারত</p>
+            </div>
+            <div class="footer-section">
+                <h3>যোগাযোগ</h3>
+                <a href="tel:+913324790184">ল্যান্ডলাইন: ০৩৩ ২৪৭৯ ০১৮৪</a><br />
+                <a href="tel:+917044504521">ফোন: +৯১ ৭০৪৪৫ ০৪৫২১</a><br />
+                <a href="tel:+91XXXXXXXXXX">বিকল্প: +৯১ ৯৮৩০০ XXXXX</a><br />
+                <a href="/cdn-cgi/l/email-protection#f3879b9680929d989281999684969f9f968180b3949e929a9fdd909c9e">ইমেইল: <span class="__cf_email__" data-cfemail="e99d818c9a888782889b838c9e8c85858c9b9aa98e84888085c78a8684">[email&#160;protected]</span></a><br>
+                সময়: সোম-শনি, সকাল ১০:৩০ - রাত ০৯:০০
+            </div>
+            <div class="footer-section">
+                <h3>দ্রুত লিঙ্ক</h3>
+                <ul>
+                    <li><a href="./index.html#collection">আমাদের সংগ্রহ</a></li>
+                    <li><a href="./index.html#about_us">আমাদের সম্পর্কে</a></li>
+                    <li><a href="./index.html#checkMetalPrices">আজকের সোনা/রুপার রেট</a></li>
+                    <li><a href="./CustomizeYourCollection.html">কাস্টম সংগ্রহ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer_disclaimer_container">
+                <div class="footer_text_inside">
+                    <h3>সমস্ত পণ্যে শর্ত প্রযোজ্য</h3>
+                    <ul>
+                        <li>ধাতুর মূল্য, রত্নপাথরের মূল্য এবং গহনার পণ্যসমূহ বাজারের ঝুঁকির অধীন।</li>
+                        <li>শর্ত ও নিয়মাবলী প্রযোজ্য।</li>
+                    </ul>
+                </div>
+            </div>
+            <p>&copy; ২০২৬ শংকর জুয়েলার্স। সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
