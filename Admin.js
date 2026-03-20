@@ -45,7 +45,7 @@ styleSheet.textContent = `
     .input-box {
         width: 100%; padding: 0.8rem 0; background: transparent;
         border: none; border-bottom: 2px solid #334155;
-        color: white; font-size: 16px; outline: none;
+        color: black; font-size: 16px; outline: none;
     }
     .float-label {
         position: absolute; left: 0; top: 0.8rem;
