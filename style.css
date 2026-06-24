@@ -142,7 +142,7 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    animation: heroSlideshow 26.67s infinite;
+    animation: heroSlideshow 33.34s infinite;
 }
 
     .hero-slide:nth-child(1) {
@@ -163,6 +163,10 @@ body {
     .hero-slide:nth-child(4) {
         background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/photo-4-index-hero.png?w=1920&h=1080&fit=crop');
         animation-delay: 20.0s;
+    }
+    .hero-slide:nth-child(5) {
+        background-image: linear-gradient(rgba(26, 20, 16, 0.4), rgba(26, 20, 16, 0.4)), url('./images/sankar jewellers logo.jpeg?w=1920&h=1080&fit=crop');
+        animation-delay: 26.67s;
     }
 
 @keyframes heroSlideshow {
